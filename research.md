@@ -59,6 +59,9 @@
 
 - [Berkeley Function-Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html)
 
+### 
+
+- [the million context scam](https://www.reddit.com/r/LocalLLaMA/comments/1mq19x6/1_million_context_is_the_scam_the_ai_start/
 
 ## others
 
