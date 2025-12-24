@@ -31,12 +31,23 @@
 
 
 # 📰 Articles
-## Model Comparison / Best Usage
-- [copilot model-comparison](https://docs.github.com/en/copilot/reference/ai-models/model-comparison)
-- [copilot premium usage ref](https://docs.github.com/en/copilot/concepts/billing/copilot-requests)
 
-## etc
+## Model Comparison / Best Usage
+
+- Github Copilot [model-comparison](https://docs.github.com/en/copilot/reference/ai-models/model-comparison)
+- Github Copilot [PREMIUM USAGE](https://docs.github.com/en/copilot/concepts/billing/copilot-requests) References
+
+## Context is King!
+
 - [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-AI-agents)
+- [context-rot](https://research.trychroma.com/context-rot)
+  - [reddit](https://www.reddit.com/r/LocalLLaMA/comments/1m4fs2t/context_rot_how_increasing_input_tokens_impacts/)
+    - [https://arxiv.org/abs/2402.14848](https://arxiv.org/abs/2402.14848) 
+    - [https://arxiv.org/abs/2502.05167](https://arxiv.org/abs/2502.05167)
+    - [https://arxiv.org/abs/2404.02060](https://arxiv.org/abs/2404.02060)
+- [](https://www.understandingai.org/p/context-rot-the-emerging-challenge)
+- [context benchmarked](https://www.letta.com/blog/context-bench)
+- [the million context scam](https://www.reddit.com/r/LocalLLaMA/comments/1mq19x6/1_million_context_is_the_scam_the_ai_start/
 
 
 # 🗂️ MCPs
@@ -48,8 +59,11 @@
 
 - [context7](https://context7.com) - band aid solution for mcps
 
+
 # 📚 References
+
 ## 📚 Benchmarks
+
 - [benchmarks](https://artificialanalysis.ai/models/kimi-k2) - all ai model general benchmarks here
 - [Nejumi Dashboard](https://nejumi.ai/) 🇯🇵 - Nejumi Leaderboard evaluates response consistency by testing JMMLU with multiple patterns (standard method, symbolic choices, selecting non-correct answers)
 - [Nejumi Dashboard - Legacy](https://wandb.ai/wandb-japan/llm-leaderboard) 🇯🇵 - See how leading models stack up across text, image, vision, and beyond. This page gives you a snapshot of each Arena, you can explore deeper insights in their dedicated tabs.
@@ -59,9 +73,6 @@
 
 - [Berkeley Function-Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html)
 
-### 
-
-- [the million context scam](https://www.reddit.com/r/LocalLLaMA/comments/1mq19x6/1_million_context_is_the_scam_the_ai_start/
 
 ## others
 
