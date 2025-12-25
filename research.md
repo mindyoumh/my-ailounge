@@ -49,14 +49,19 @@
 
 ## 📚 Benchmarks / Leaderboards
 
-- [benchmarks](https://artificialanalysis.ai/models/kimi-k2) - all ai model general benchmarks here
-- zAI [list] 🇨🇳(https://huggingface.co/zai-org)
+- [SuperClue AI](https://www.superclueai.com/generalpage) 🇨🇳 - Most traffic
+- [FlagEval](https://flageval.baai.ac.cn/#/leaderboard) 🇨🇳 - most in depth of them all
+- [artificial analysis](https://artificialanalysis.ai/models/kimi-k2) 🇨🇳 - all ai model general benchmarks here
 - [Nejumi Dashboard](https://nejumi.ai/) 🇯🇵 - Nejumi Leaderboard evaluates response consistency by testing JMMLU with multiple patterns (standard method, symbolic choices, selecting non-correct answers)
 - [Nejumi Dashboard - Legacy](https://wandb.ai/wandb-japan/llm-leaderboard) 🇯🇵 - See how leading models stack up across text, image, vision, and beyond. This page gives you a snapshot of each Arena, you can explore deeper insights in their dedicated tabs.
-- [korea ](https://huggingface.co/spaces/upstage/open-ko-llm-leaderboard) 🇰🇷
+- open [ko-llm](https://huggingface.co/spaces/upstage/open-ko-llm-leaderboard) 🇰🇷
 - [llm-arena](https://lmarena.ai/leaderboard) 🌎🌏🌍
-- [seed bytedance](https://seed.bytedance.com/en/blog/the-doubao-seed-team-open-sources-new-benchmark-for-code-large-models-covering-over-11-real-world-programming-scenarios-for-the-first-time)
+- [livebench](https://livebench.ai/#/?sort=Coding+Average) by AI21 Labs 🇮🇱
 - [Berkeley Function-Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) 🇺🇸
+- Russian [SuperGlue](https://russiansuperglue.com/leaderboard/2) 🇷🇺 - rigorous adaptation of the original Western GLUE/SuperGLUE benchmarks but completely re-engineered for the Russian language's complex morphology (cases, genders)
+- [SEAL SCALE](https://scale.com/leaderboard?category=agentic) by Scale AI 🇺🇸
+- [SEA LLMS](https://huggingface.co/spaces/SeaLLMs/LLM_Leaderboard_for_SEA) 🇮🇩🇵🇭🇻🇳🇸🇬🇲🇾 - Southeast asian LLMs
+- [Taiwan](https://huggingface.co/datasets/syntaxsynth/tmmluplus) 🇹🇼 - Taiwan Leaderboard
 
 # 🗂️ MCPs
 
@@ -74,6 +79,7 @@
 - [aider](https://aider.chat/)
 - [construct](https://github.com/furisto/construct) - API-first multi-agent coding assistant with CodeAct tool calling and first-class terminal support.
 - [Warp Docs](https://docs.warp.dev/) - Official Warp documentation (Agentic Development Environment, Warp AI, agents, Warp Drive).
+- zAI [list](https://huggingface.co/zai-org) 🇨🇳
 
 # 🛡️ Security
 
@@ -86,8 +92,9 @@
 # 💬 Discussion
 
 - [Excalidraw](https://excalidraw.com/) - Collaborative diagramming tool.
-- [Why I switched from Claude Code to Warp](https://levelup.gitconnected.com/why-i-switched-from-claude-code-to-warp-920ab7fcef8b)
+- Why I switched from [Claude Code to Warp](https://levelup.gitconnected.com/why-i-switched-from-claude-code-to-warp-920ab7fcef8b)
 
 # 💸 Pricing & Cost Analysis
 
 - [Pricing Models and Cost Analysis](./pricing.md) - This document outlines the pricing models for LLMs and cloud services (e.g., AWS), detailing cost factors and optimization strategies for managing expenses within the AI Factory.
+- Private [Doc](https://docs.google.com/spreadsheets/d/1bkSfaSsEbTcl1Fv0uqGk2RMJW9jJMt-NOapV7cP5u44/edit?gid=0#gid=0)
