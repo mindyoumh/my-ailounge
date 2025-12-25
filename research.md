@@ -36,7 +36,7 @@
 
 ## Context is King!
 
-- [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-AI-agents)
+- [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [https://research.trychroma.com/context-rot](https://research.trychroma.com/context-rot)
   - [reddit](https://www.reddit.com/r/LocalLLaMA/comments/1m4fs2t/context_rot_how_increasing_input_tokens_impacts/)
     - [https://arxiv.org/abs/2402.14848](https://arxiv.org/abs/2402.14848) 
