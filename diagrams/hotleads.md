@@ -2,33 +2,42 @@
 
 ```mermaid
 graph TB
-    %% --- STYLING ---
-    classDef core fill:#ffffff,stroke:#000000,stroke-width:2px;
-    classDef db fill:#f4f4f4,stroke:#000000,stroke-width:2px,stroke-dasharray: 0;
-    classDef ext fill:#ffffff,stroke:#666666,stroke-width:1px,stroke-dasharray: 5 5;
-    classDef secure fill:#e6f3ff,stroke:#004c99,stroke-width:2px;
+    %% --- STYLING (Dark Mode) ---
+    %% Core Nodes: Dark Charcoal with Off-White text
+    classDef core fill:#2d2d2d,stroke:#a0a0a0,stroke-width:2px,color:#ffffff;
+    
+    %% Database: Deep Navy with Cyan Border (High Security feel)
+    classDef secure fill:#0f172a,stroke:#00e5ff,stroke-width:2px,color:#ffffff;
+    
+    %% External: Black with Grey dashed lines
+    classDef ext fill:#000000,stroke:#666666,stroke-width:1px,stroke-dasharray: 5 5,color:#cccccc;
+    
+    %% Edges/Lines
+    linkStyle default stroke:#a0a0a0,stroke-width:2px;
 
     %% --- ACTORS ---
     subgraph User_Tier [End User Experience]
+        style User_Tier fill:#1a1a1a,stroke:#444444,color:#ffffff
         User((User / Admin))
         Frontend[React Frontend<br/><i>MFA Enabled</i>]
     end
 
     %% --- AWS CLOUD ENV ---
     subgraph AWS_Cloud [AWS Cloud Environment]
-        style AWS_Cloud fill:#fafafa,stroke:#cccccc
+        style AWS_Cloud fill:#121212,stroke:#555555,color:#ffffff
         
         %% Entry
         Gateway[Internet Gateway / Load Balancer<br/><i>TLS 1.3 Termination</i>]
 
         %% Application Tier
         subgraph App_Tier [ECS Cluster - Dockerized Microservices]
-            style App_Tier fill:#ffffff,stroke:#333333
+            style App_Tier fill:#1e1e1e,stroke:#444444,color:#ffffff
             
             Django_Core[Django Backend API<br/><i>Processing & Logic</i>]
             Auth_Mod[Auth Module<br/><i>Argon2 Hashing & JWT Issue</i>]
             
             subgraph Workers [Async Processing]
+                style Workers fill:#252525,stroke:#555555,color:#eeeeee
                 Cron[Scheduled Cron Jobs<br/><i>Data Fetching</i>]
                 Webhook_Handler[Webhook Receiver<br/><i>Real-time Events</i>]
             end
@@ -39,14 +48,14 @@ graph TB
 
         %% Data Tier (Private)
         subgraph Storage_Tier [Private Data Sanctuary]
-            style Storage_Tier fill:#e6f3ff,stroke:#004c99
+            style Storage_Tier fill:#0f172a,stroke:#00e5ff,stroke-width:1px,stroke-dasharray: 5 5,color:#00e5ff
             RDS[(PostgreSQL RDS<br/><i>Encrypted at Rest AES-256</i>)]
         end
     end
 
     %% --- EXTERNAL ECOSYSTEM ---
     subgraph External_APIs [Trusted Third-Party Ecosystem]
-        style External_APIs fill:#ffffff,stroke:#666666,stroke-dasharray: 5 5
+        style External_APIs fill:#000000,stroke:#666666,stroke-dasharray: 5 5,color:#aaaaaa
         Zoom[Zoom API<br/><i>Video</i>]
         Zoho[Zoho CRM<br/><i>Records</i>]
         Google[Google Workspace<br/><i>Calendar</i>]
