@@ -23,6 +23,21 @@ This repository functions as the **Mind You AI Council and AI Factory**, an adva
 Welcome to the Mind You AI ecosystem, where you can supercharge your workflows with tailored agent models, advanced tools, and best-in-class productivity software. This repository provides everything needed to implement AI in your organization with structured guidance, clear references, and adaptable technologies.
 
 ---
+## New Team Members - Start Here
+
+**Welcome to the team!** If you're a new employee or intern, start with our comprehensive onboarding guide:
+
+**→ [Developer Onboarding Guide](./docs/INSTRUCTIONS.md)**
+
+This guide walks you through:
+- Getting GitHub Copilot through GitHub Education
+- Getting Gemini Pro through Google Education  
+- Setting up VS Code with Copilot IDE
+- Installing and configuring opencode CLI
+- Installing and configuring Gemini CLI
+- Complete verification and testing
+
+**Estimated time:** 2-3 hours (including approval wait times)
 
 ## Key Features
 
