@@ -779,8 +779,8 @@ Read the main [README.md](../README.md) to understand:
 
 ### 2. Explore the Repository
 
-- Check out the `agents/` directory
-- Review existing agent definitions
+- Explore the repository structure and key project directories
+- Review any existing agent or tool configuration files (if present)
 - Understand the team's workflow
 
 ### 3. Start Small
