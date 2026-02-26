@@ -27,7 +27,7 @@ The objective of this phase is to allow users to complete form entries without e
 #### Step 1: UI Development (Block Kit)
 To ensure the form looks and feels like a native Slack component, we will use Slack's **Block Kit**.
 *   **Resource:** [Slack Block Kit Builder](https://app.slack.com/block-kit-builder) – Use this to visually design your form (inputs, dropdowns) and get the JSON code.
-*   **Tutorial:** [Create A Slack Bot Using Block Kit: Ultimate Builder's Guide](https://api.slack.com/block-kit).
+*   **Documentation:** [Slack Block Kit documentation](https://api.slack.com/block-kit).
 
 #### Step 2: Logic (Slash Command & Interactivity)
 The form will be invoked via a custom **Slash Command** (e.g., `/techrequest`).
