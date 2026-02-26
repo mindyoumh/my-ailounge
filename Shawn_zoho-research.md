@@ -9,7 +9,7 @@ This project outlines the strategic integration between Zoho Forms and Slack to 
 This phase addresses the requirement of real-time notifications. When a user submits a Zoho Form, an automated alert is sent to a designated Slack channel (e.g., #ai-lounge).
 
 ### Implementation Strategy
-The integration follows a standard automation logic: **Webhook Trigger (Form Submission) $\rightarrow$ Action (Slack Message Notification)**.
+The integration follows a standard automation logic: **Webhook Trigger (Form Submission) → Action (Slack Message Notification)**.
 
 *   **Preferred Platform:** While third-party tools like Pabbly or Zapier are viable, it is recommended to use **Zoho Flow**. This ensures a native, secure, and more cost-effective integration within the Zoho ecosystem.
 *   **Core Workflow:**
