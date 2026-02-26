@@ -30,3 +30,11 @@
 3. **[OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB)**: No description provided.
 4. **[LadybirdBrowser/ladybird](https://github.com/LadybirdBrowser/ladybird)**: No description provided.
 5. **[x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)**: No description provided.
+
+## Trending on 2026-02-26
+
+1. **[D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling)**: No description provided.
+2. **[huggingface/skills](https://github.com/huggingface/skills)**: No description provided.
+3. **[abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus)**: No description provided.
+4. **[obra/superpowers](https://github.com/obra/superpowers)**: No description provided.
+5. **[muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)**: No description provided.
