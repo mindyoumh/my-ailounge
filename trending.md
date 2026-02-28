@@ -46,3 +46,11 @@
 3. **[muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)**: No description provided.
 4. **[bytedance/deer-flow](https://github.com/bytedance/deer-flow)**: No description provided.
 5. **[huggingface/skills](https://github.com/huggingface/skills)**: No description provided.
+
+## Trending on 2026-02-28
+
+1. **[bytedance/deer-flow](https://github.com/bytedance/deer-flow)**: No description provided.
+2. **[moonshine-ai/moonshine](https://github.com/moonshine-ai/moonshine)**: No description provided.
+3. **[muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)**: No description provided.
+4. **[obra/superpowers](https://github.com/obra/superpowers)**: No description provided.
+5. **[ruvnet/ruflo](https://github.com/ruvnet/ruflo)**: No description provided.
