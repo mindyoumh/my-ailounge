@@ -54,3 +54,11 @@
 3. **[muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)**: No description provided.
 4. **[obra/superpowers](https://github.com/obra/superpowers)**: No description provided.
 5. **[ruvnet/ruflo](https://github.com/ruvnet/ruflo)**: No description provided.
+
+## Trending on 2026-03-01
+
+1. **[ruvnet/wifi-densepose](https://github.com/ruvnet/wifi-densepose)**: No description provided.
+2. **[moeru-ai/airi](https://github.com/moeru-ai/airi)**: No description provided.
+3. **[anthropics/claude-code](https://github.com/anthropics/claude-code)**: No description provided.
+4. **[tukaani-project/xz](https://github.com/tukaani-project/xz)**: No description provided.
+5. **[Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)**: No description provided.
