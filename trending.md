@@ -114,3 +114,7 @@
 3. **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**: No description provided.
 4. **[K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills)**: No description provided.
 5. **[CodebuffAI/codebuff](https://github.com/CodebuffAI/codebuff)**: No description provided.
+
+
+### Trending on 2026-03-05
+- https://github.com/KeygraphHQ/shannon
