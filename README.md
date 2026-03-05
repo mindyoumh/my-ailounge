@@ -8,6 +8,7 @@ This repository functions as the **Mind You AI Council and AI Factory**, an adva
 
 - [Introduction](#introduction)
 - [Key Features](#key-features)
+- [Project Structure](#project-structure)
 - [Tooling](#tooling)
 - [Pricing](#pricing)
 - [Roles](#roles)
@@ -47,6 +48,16 @@ This guide walks you through:
 
 ---
 
+## Project Structure
+
+- `/docs/` - Task overviews, research, and usage guides.
+- `/diagrams/` - Mermaid charts and system architecture visuals.
+- `/src/` - Source code, bot files, and AI tools.
+- `/ideas/` - Brainstorming and future feature requests.
+- `/shawn/` - Personal scratchpads and task lists.
+
+---
+
 ## Tooling
 
 ### Gemini CLI
@@ -62,7 +73,7 @@ For more details, see [Tooling Documentation](./docs/vibe-coding-vs-legacy.md).
 
 ## Pricing
 
-Explore detailed pricing analysis models, benchmarks, and strategies in the [Pricing Documentation](./pricing.md).
+Explore detailed pricing analysis models, benchmarks, and strategies in the [Pricing Documentation](./docs/pricing.md).
 
 ---
 
@@ -73,20 +84,20 @@ The AI ecosystem leverages distinct roles that include:
 2. **Oracle (Architect)**
 3. **Librarian (Researcher)**
 
-For a complete breakdown, refer to the [Role Definitions](./oh-my-opencode-models.md).
+For a complete breakdown, refer to the [Role Definitions](./docs/oh-my-opencode-models.md).
 
 ---
 
 ## Research
 
-The ecosystem fosters a research-driven workflow. Access benchmarks, live leaderboards, and plugins via the [Research Resource](./research.md).
+The ecosystem fosters a research-driven workflow. Access benchmarks, live leaderboards, and plugins via the [Research Resource](./docs/research.md).
 
 ---
 
 ## Usage Guide
 
 ### Getting Started
-1. Read the [Agent Overview](./agents.md).
+1. Read the [Agent Overview](./docs/agents.md).
 2. Explore the `/agents` folder for predefined templates.
 3. Create your first agent using the provided scaffold.
 
@@ -94,13 +105,13 @@ The ecosystem fosters a research-driven workflow. Access benchmarks, live leader
 
 ## Contributing
 
-We welcome contributions! Check out our [Contributing Guide](./to-discuss.md) for more information.
+We welcome contributions! Check out our [Contributing Guide](./ideas/to-discuss.md) for more information.
 
 ---
 
 ## FAQs and Support
 
-Frequently asked questions and step-by-step troubleshooting guidelines are available [here](./WARP.md).
+Frequently asked questions and step-by-step troubleshooting guidelines are available [here](./docs/WARP.md).
 
 ---
 
@@ -112,7 +123,7 @@ Frequently asked questions and step-by-step troubleshooting guidelines are avail
 ### Quality Improvements
 - Enhance architecture reviews.
 
-For complete targets, check out the [Strategic Plans](./reference-prompts.md).
+For complete targets, check out the [Strategic Plans](./docs/reference-prompts.md).
 
 ---
 
