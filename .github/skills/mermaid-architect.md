@@ -5,7 +5,8 @@ Translates raw project notes, folder structures, and system requirements into cl
 
 ## Instructions
 1. **Analyze the Input:** Review the provided raw text, folder structures, or system requirements from the user.
-2. **Determine Diagram Type:** * Use a `graph TD` (flowchart) for file architecture, repository structures, and task overviews.
+2. **Determine Diagram Type:**
+    * Use a `graph TD` (flowchart) for file architecture, repository structures, and task overviews.
     * Use a `sequenceDiagram` for illustrating AI agent tool execution flows and system processes.
 3. **Draft the Code:** Generate the strict Mermaid syntax. Ensure all nodes are clearly labeled with plain English. Keep the architecture logical and avoid overly deep nesting to prioritize scannability.
 4. **Format the Output:** Wrap the generated Mermaid code in a standard markdown code block using the `mermaid` tag. 
