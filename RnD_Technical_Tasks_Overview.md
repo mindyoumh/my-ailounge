@@ -35,7 +35,8 @@
 
 ### Key Technical Deliverables / Issues
 - [ ] **Mind You GPT:** Conceptualization of Mind You GPT.
-    - *Proposed Solution / Tech Stack:* [Leave blank for review]
+    - *Summary:* Development of a specialized, lexicon-informed large language model to assist clinicians by identifying linguistic indicators of psychological distress, depressive symptoms, and burnout. This involves integrating a proprietary 13-category Depression Lexicon into the model's training to increase sensitivity to early signs of distress. The system will operate within the MIND-SAFE framework, a multi-layered architecture prioritizing ethical safeguards, clinical alignment, and immediate escalation for acute risks.
+    - *Full Research Document here* [View Here](https://docs.google.com/document/d/1SF0PryxOCY2-aJmsRLwGaPLRuusX3QHRsczwKkamTYw/edit?usp=sharing)
 - [ ] **Digitization:** Digitize paper-based Assessments.
     - *Proposed Solution / Tech Stack:* [Leave blank for review]
 - [ ] **Automated Scoring:** Code automated scoring for Test Construction.
