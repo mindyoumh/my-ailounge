@@ -127,3 +127,7 @@
 3. **[microsoft/hve-core](https://github.com/microsoft/hve-core)**: No description provided.
 4. **[Ed1s0nZ/CyberStrikeAI](https://github.com/Ed1s0nZ/CyberStrikeAI)**: No description provided.
 5. **[inclusionAI/AReaL](https://github.com/inclusionAI/AReaL)**: No description provided.
+
+
+### Trending on 2026-03-07
+- https://github.com/moeru-ai/airi
