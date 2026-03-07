@@ -119,3 +119,11 @@
 
 ### Trending on 2026-03-06
 - https://github.com/msitarzewski/agency-agents
+
+## Trending on 2026-03-07
+
+1. **[moeru-ai/airi](https://github.com/moeru-ai/airi)**: No description provided.
+2. **[QwenLM/Qwen-Agent](https://github.com/QwenLM/Qwen-Agent)**: No description provided.
+3. **[microsoft/hve-core](https://github.com/microsoft/hve-core)**: No description provided.
+4. **[Ed1s0nZ/CyberStrikeAI](https://github.com/Ed1s0nZ/CyberStrikeAI)**: No description provided.
+5. **[inclusionAI/AReaL](https://github.com/inclusionAI/AReaL)**: No description provided.
