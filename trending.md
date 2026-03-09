@@ -143,3 +143,11 @@
 
 ### Trending on 2026-03-08
 - https://github.com/666ghj/MiroFish
+
+## Trending on 2026-03-09
+
+1. **[GoogleCloudPlatform/generative-ai](https://github.com/GoogleCloudPlatform/generative-ai)**: No description provided.
+2. **[666ghj/MiroFish](https://github.com/666ghj/MiroFish)**: No description provided.
+3. **[shadcn-ui/ui](https://github.com/shadcn-ui/ui)**: No description provided.
+4. **[openclaw/openclaw](https://github.com/openclaw/openclaw)**: No description provided.
+5. **[toeverything/AFFiNE](https://github.com/toeverything/AFFiNE)**: No description provided.
