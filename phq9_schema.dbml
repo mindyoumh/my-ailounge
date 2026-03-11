@@ -1,0 +1,78 @@
+// -------------------------------------------------------------------------
+// External / Base Models (Mocked for reference)
+// -------------------------------------------------------------------------
+
+Table User {
+  id int [pk, increment]
+  email varchar(255)
+}
+
+// -------------------------------------------------------------------------
+// PHQ9 Models
+// -------------------------------------------------------------------------
+
+Table Question {
+  id int [pk, increment]
+  question text
+  tip text [null]
+  order int [default: 0]
+  zoho_api_name text [null]
+  created_at datetime
+  updated_at datetime
+}
+
+Table AnswerSelection {
+  id int [pk, increment]
+  content text [unique]
+  score int [default: 0]
+  created_at datetime
+  updated_at datetime
+}
+
+// Implicit ManyToMany pivot table for Question.answer_selections
+Table Question_AnswerSelections {
+  id int [pk, increment]
+  question_id int
+  answerselection_id int
+}
+
+Table Answer {
+  id int [pk, increment]
+  question_id int
+  answer_id int
+  answered_by_id int
+  created_at datetime [null]
+
+  indexes {
+    (question_id, answered_by_id) [unique]
+  }
+}
+
+Table UserSurveyAnsweringProgress {
+  id int [pk, increment]
+  user_id int [unique] // OneToOne relationship
+  last_answered_question_id int [null]
+  next_question_id int [null]
+  survey_done boolean [default: false]
+  total_score int [default: 0]
+  created_at datetime [null]
+  updated_at datetime [null]
+}
+
+// -------------------------------------------------------------------------
+// Relationships
+// -------------------------------------------------------------------------
+
+// Question <-> AnswerSelections (ManyToMany)
+Ref: Question_AnswerSelections.question_id > Question.id
+Ref: Question_AnswerSelections.answerselection_id > AnswerSelection.id
+
+// Answer
+Ref: Answer.question_id > Question.id
+Ref: Answer.answer_id > AnswerSelection.id
+Ref: Answer.answered_by_id > User.id
+
+// UserSurveyAnsweringProgress
+Ref: UserSurveyAnsweringProgress.user_id - User.id // 1-to-1
+Ref: UserSurveyAnsweringProgress.last_answered_question_id > Question.id
+Ref: UserSurveyAnsweringProgress.next_question_id > Question.id
