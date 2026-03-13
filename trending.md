@@ -191,3 +191,11 @@
 
 ### Trending on 2026-03-12
 - https://github.com/msitarzewski/agency-agents
+
+## Trending on 2026-03-13
+
+1. **[microsoft/BitNet](https://github.com/microsoft/BitNet)**: No description provided.
+2. **[fishaudio/fish-speech](https://github.com/fishaudio/fish-speech)**: No description provided.
+3. **[langflow-ai/openrag](https://github.com/langflow-ai/openrag)**: No description provided.
+4. **[InsForge/InsForge](https://github.com/InsForge/InsForge)**: No description provided.
+5. **[vectorize-io/hindsight](https://github.com/vectorize-io/hindsight)**: No description provided.
