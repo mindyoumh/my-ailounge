@@ -199,3 +199,7 @@
 3. **[langflow-ai/openrag](https://github.com/langflow-ai/openrag)**: No description provided.
 4. **[InsForge/InsForge](https://github.com/InsForge/InsForge)**: No description provided.
 5. **[vectorize-io/hindsight](https://github.com/vectorize-io/hindsight)**: No description provided.
+
+
+### Trending on 2026-03-13
+- https://github.com/microsoft/BitNet
