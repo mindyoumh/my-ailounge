@@ -203,3 +203,11 @@
 
 ### Trending on 2026-03-13
 - https://github.com/microsoft/BitNet
+
+## Trending on 2026-03-14
+
+1. **[microsoft/BitNet](https://github.com/microsoft/BitNet)**: No description provided.
+2. **[langflow-ai/openrag](https://github.com/langflow-ai/openrag)**: No description provided.
+3. **[lightpanda-io/browser](https://github.com/lightpanda-io/browser)**: No description provided.
+4. **[obra/superpowers](https://github.com/obra/superpowers)**: No description provided.
+5. **[public-apis/public-apis](https://github.com/public-apis/public-apis)**: No description provided.
