@@ -211,3 +211,7 @@
 3. **[lightpanda-io/browser](https://github.com/lightpanda-io/browser)**: No description provided.
 4. **[obra/superpowers](https://github.com/obra/superpowers)**: No description provided.
 5. **[public-apis/public-apis](https://github.com/public-apis/public-apis)**: No description provided.
+
+
+### Trending on 2026-03-14
+- https://github.com/microsoft/BitNet
