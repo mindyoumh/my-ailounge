@@ -1,5 +1,7 @@
 # PR #24 Review — Deferred Findings Backlog
 
+> **Status 2026-09-29:** still pending. Re-checked against `main`: M1 (no API auth), M2 (no CSV size cap), M6 (no tests), M7 (no `engines`), L1 (unescaped `"` in the PDF filename), L4 (`item.title.replace` with no null guard) and L5 (double sort in `log-parser.ts`) are all still open. M4 is partly resolved: the ingest workflows now use Node 22 and the old `ingest.yml` is gone, but the persistence question is unanswered. M5 is partly resolved: `GH_ACCESS_TOKEN` is honoured in `src/lib/repo-radar.ts`, but the refresh endpoint has no rate limit. M3 and L3 were not re-verified line by line.
+
 **PR:** [#24 — Developer Intelligence Feed Dashboard Foundation](https://github.com/mindyoumh/my-ailounge/pull/24)
 **Branch:** `feat/developer-intelligence-feed` → `main`
 **Reviewed:** 2026-07-24

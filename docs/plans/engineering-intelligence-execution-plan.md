@@ -1,5 +1,7 @@
 # Engineering Intelligence — Execution Plan
 
+> **Status 2026-09-29:** mostly shipped, kept as pending. The RSS entries, the feed files (now `09`-`12` under `docs/feeds/`) and the `devops`/`github` categories are on `main`. Still open: `FILE_CATEGORY_MAP` in `src/ingesters/manual-feeds/index.ts` maps only `09-devops-news.md` and `10-github-news.md`, so it does not match the current feed files (`10-docker`, `11-devops`, `12-github`), and the dashboard-section and trending-query decisions in steps 6-7 were never made.
+
 **Date:** 2026-06-22
 **Audience:** Developer implementing the 10 new feed sources
 **Prerequisite Reading:**

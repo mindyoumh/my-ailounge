@@ -1,5 +1,7 @@
 # Log Analysis Dashboard
 
+> **Status 2026-09-29:** Phase 1 and Phase 2 are shipped; the plan stays open for the Future Enhancements and the open questions. Re-checked against `main`: `POST /api/logs` still has no size or row cap (`app/api/logs/route.ts`).
+
 ## Background
 
 My-AILounge ingests engineering intelligence from multiple sources (Hacker News, RSS, GitHub Trending, manual feeds) into a unified dashboard. Sir Bo identified an opportunity to extend this capability to internal operational logs — specifically Acuity and Zoho logs — enabling the team to detect recurring issues, surface anomalies, and derive operational insights from the same dashboard interface used for engineering intelligence.
