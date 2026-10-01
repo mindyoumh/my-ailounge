@@ -336,7 +336,7 @@ We welcome contributions.
 
 Recommended workflow:
 
-1. Create a feature branch (`feat/description` or `fix/description`).
+1. Create a short-lived branch off `main` (`feat/description` or `fix/description`). `main` is the only long-lived branch, and every change lands through a PR into `main`.
 2. Implement changes.
 3. Read the sub-README before editing any module, and update it afterwards — documentation is part of the implementation.
 4. Verify ingestion and dashboard functionality.
