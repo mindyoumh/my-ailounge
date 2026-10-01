@@ -1,5 +1,7 @@
 # Engineering Intelligence — Implementation Roadmap
 
+> **Status 2026-09-29:** pending. Phases 0-1 (feed files, RSS additions) and Phase 4 (`src/config/intern-tasks.ts`) are on `main`. Phase 3 is not done: there is no `src/ingesters/nvd/` module, so the temporary CVE RSS entry is still the only CVE source. Phase 5 (bonus sources, feed rotation) is still deferred.
+
 **Date:** 2026-06-22
 **Source Documents:**
 - [`../research/engineering-intelligence-source-validation.md`](../research/engineering-intelligence-source-validation.md) — source-by-source validation with corrections
