@@ -121,7 +121,7 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 
 ## Workflow
 
-- Branch: feat/description or fix/description
+- Branch: short-lived feat/description or fix/description off `main`, merged back into `main` by PR (trunk-based: `main` is the only long-lived branch)
 - Read the sub-README before editing any module
 - For documentation discovery, start with docs/README.md
 - After schema changes: run npm run db:migrate, then npm run build
