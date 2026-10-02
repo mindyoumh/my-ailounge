@@ -129,10 +129,4 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 - Commits and pushes are not gated. Before merging to `main`: npm run build must pass
 - After changing app/, app/api/, src/, components/, or docs/: update the corresponding README.md — documentation is part of the implementation
 - No tests or linter configured yet
-
-## Available Skills
-
-caveman — Ultra-compressed output (75% fewer tokens)
-github-deep-research — Multi-round repo analysis, timeline reconstruction
-planning-and-task-breakdown — Break specifications into ordered tasks
-ui-ux-pro-max — UI/UX design, shadcn, Tailwind, color systems, component architecture
+- When a plan or task doc is fully done, delete it — git history keeps the record
