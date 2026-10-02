@@ -126,13 +126,7 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 - For documentation discovery, start with docs/README.md
 - After schema changes: run npm run db:migrate, then npm run build
 - After ingester changes: run npm run ingest, then npm run build
-- Before commit: npm run build must pass
+- Commits and pushes are not gated. Before merging to `main`: npm run build must pass
 - After changing app/, app/api/, src/, components/, or docs/: update the corresponding README.md — documentation is part of the implementation
 - No tests or linter configured yet
-
-## Available Skills
-
-caveman — Ultra-compressed output (75% fewer tokens)
-github-deep-research — Multi-round repo analysis, timeline reconstruction
-planning-and-task-breakdown — Break specifications into ordered tasks
-ui-ux-pro-max — UI/UX design, shadcn, Tailwind, color systems, component architecture
+- When a plan or task doc is fully done, delete it — git history keeps the record
