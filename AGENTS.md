@@ -126,7 +126,7 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 - For documentation discovery, start with docs/README.md
 - After schema changes: run npm run db:migrate, then npm run build
 - After ingester changes: run npm run ingest, then npm run build
-- Before commit: npm run build must pass
+- Commits and pushes are not gated. Before merging to `main`: npm run build must pass
 - After changing app/, app/api/, src/, components/, or docs/: update the corresponding README.md — documentation is part of the implementation
 - No tests or linter configured yet
 
