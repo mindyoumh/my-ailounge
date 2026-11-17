@@ -1,5 +1,7 @@
 # Documentation Audit
 
+> **Status 2026-11-18:** point-in-time snapshot from June 2026, not maintained. Superseded by [`documentation-audit-v2.md`](./documentation-audit-v2.md); it still describes the SQLite-era codebase and the removed `ingest.yml` workflow. For current documentation coverage use [`docs/README.md`](../README.md).
+
 ## Features
 
 | Name | Location | Purpose | Documentation Status |

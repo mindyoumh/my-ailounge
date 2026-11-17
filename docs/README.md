@@ -18,7 +18,7 @@ This folder contains onboarding guides, architecture references, research materi
 8. **`feeds/feeds-format-guide.md`** — Learn the markdown feed format for manual entries.
 9. **`tooling/agentic-coding-attribute-matrix.md`** — Understand AI coding patterns used in this repo.
 10. **`../.github/workflows/`** — Understand how scheduled ingestion runs via 3 GitHub Actions cron workflows.
-11. **`post-mvp-roadmap.md`** — See the planned feature roadmap (4 tiers, 16 items).
+11. **`post-mvp-roadmap.md`** — See the planned feature roadmap (4 tiers, 15 items).
 
 ---
 
@@ -91,7 +91,7 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 | Doc | Description |
 |-----|-------------|
 | `guides/developer-dashboard.md` | Dashboard requirements specification: 3 audiences (lead devs, interns, team), 8 modules with feature descriptions, non-binding stack suggestions |
-| `post-mvp-roadmap.md` | Post-MVP feature roadmap: 4 tiers (Automation & Intelligence, Dashboard Enhancements, Quality & Infrastructure, Polish) with 16 feature items |
+| `post-mvp-roadmap.md` | Post-MVP feature roadmap: 4 tiers (Automation & Intelligence, Dashboard Enhancements, Quality & Infrastructure, Polish) with 15 feature items |
 
 ---
 

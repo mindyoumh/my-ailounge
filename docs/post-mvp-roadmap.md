@@ -4,7 +4,6 @@
 
 | Feature | Why |
 |---------|-----|
-| **Scheduled Ingestion** | Currently manual (`npm run ingest`). GitHub Actions cron or a lightweight scheduler makes it self-running. Already called out in README as the next step. |
 | **CVE/Security Alerts** | When `POST /api/watchlist/[id]/cve` finds a new vulnerability — push notifications via email, Slack, or Google Chat |
 | **AI Daily Digest** | LLM-generated summary of the day's top stories, version changes, and security alerts — emailed or posted to Google Chat |
 | **Watchlist Auto-Suggest** | Scan incoming feed items for package names not yet tracked, suggest adding them to watchlist |
@@ -15,7 +14,7 @@
 |---------|-----|
 | **User Preferences** | Per-user feed filters, custom dashboard layout, saved searches, notification toggles |
 | **Trend Charts** | Time-series: feed volume over time, source reliability scoring, category growth trends |
-| **Export & Reports** | PDF/CSV export for the briefing page, weekly digest PDF, shareable dashboard snapshots |
+| **Export & Reports** | PDF/CSV export for the briefing page, weekly digest PDF, shareable dashboard snapshots (watchlist and log-analysis PDF export already exist) |
 | **Feed Source Expansion** | Add Dev.to, Medium, Reddit, Twitter/X — more data = better intelligence |
 
 ## Tier 3: Quality & Infrastructure

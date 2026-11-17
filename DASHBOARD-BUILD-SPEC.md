@@ -147,16 +147,6 @@ Full-text search uses `supabase.ilike("title", "%{q}%")` — meets <200ms on cur
 - **Loading states** — `CardSkeleton` placeholders during fetch.
 - **Empty/error states** — messages for no results, filter mismatch, or fetch failure.
 
-### 2.5 Acceptance criteria (from developer-dashboard.md) — ✅ All met
-
-- [x] All sources (manual, HN, GitHub Trending, RSS) visible in one filterable view
-- [x] Manual add / remove / pin persists across reloads
-- [x] Feed items can be sorted by relevance (watchlist-based scoring)
-- [x] Page-based pagination (50/page) with Prev/Next buttons
-- [x] Ingestion runs on demand via `npm run ingest` (see Section 6)
-- [x] No duplicate rows per `(source, url)` — enforced by the existing `UNIQUE` constraint
-- [x] Full-text title search returns matches under 200ms on a typical day's volume
-
 ---
 
 ## 3. Module 5 — Engineering Briefing (Homepage)
@@ -290,18 +280,7 @@ RSS feed URLs are defined in `src/ingesters/rss/feeds.ts` — 20 feeds across 9 
 (AI, Next.js, Django, Security, Cloud, WordPress, Docker, DevOps, GitHub). Each entry specifies `url`, `category`, and
 the markdown feed file to append to. To add a new feed, add an entry to this array.
 
-### 6.4 Acceptance criteria (all ✅ met)
-
-- [x] `npm run ingest` runs all three ingesters (HN, GitHub Trending, RSS) and exits cleanly
-- [x] Each ingester logs an inserted/skipped summary
-- [x] Re-running `npm run ingest` does not create duplicate rows (`UNIQUE (source, url)` enforced)
-- [x] All sources visible in one filterable `/feed` view after running the script
-- [x] Full-text title search returns matches under 200ms on a typical day's volume
-
-> Note: the `developer-dashboard.md` criterion "Scheduled ingestion runs without manual steps"
-> is met by the three GitHub Actions cron workflows.
-
-### 6.5 Legacy `src/scraper.py`
+### 6.4 Legacy `src/scraper.py`
 
 The Python scraper (`src/scraper.py`) previously wrote GitHub Trending results to `ideas/trending.md` + Slack.
 The `ideas/trending.md` file has been removed — the TypeScript GitHub Trending ingester now fetches

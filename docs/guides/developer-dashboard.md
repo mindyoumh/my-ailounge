@@ -216,13 +216,7 @@ feed_items (
 )
 ```
 
-### Acceptance criteria
-
-- [ ] All three sources visible in one filterable view.
-- [ ] Manual add / remove / pin persists across reloads.
-- [ ] Scheduled ingestion runs without manual steps.
-- [ ] No duplicate rows per external item (enforced by `UNIQUE (source, url)`).
-- [ ] Full-text title search returns matches under 200 ms on a typical day's volume.
+**Status:** all five acceptance criteria for this module are met by the shipped feed (see `DASHBOARD-BUILD-SPEC.md`).
 
 **Notes.** One app, `source` column splits the feeds — not three half-apps. Respect API rate limits/terms.
 

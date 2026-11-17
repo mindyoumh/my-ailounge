@@ -1,5 +1,7 @@
 # Documentation Roadmap
 
+> **Status 2026-11-18:** point-in-time snapshot from June 2026, not maintained. Most of the 12 proposed standalone docs were never written; the per-directory READMEs linked from the docs hub cover that ground instead. For current documentation coverage use [`docs/README.md`](../README.md).
+
 Prioritized for onboarding a new intern who has never seen the project.
 
 ---
