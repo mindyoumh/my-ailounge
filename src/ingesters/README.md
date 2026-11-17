@@ -119,6 +119,8 @@ Parses `docs/feeds/*.md` files and upserts entries into Supabase.
 | `09-devops-news.md` | `devops` |
 | `10-github-news.md` | `github` |
 
+> **Known drift:** `FILE_CATEGORY_MAP` in `manual-feeds/index.ts` still names `09-devops-news.md` and `10-github-news.md`, but `docs/feeds/` now holds `09-wordpress-news.md`, `10-docker-news.md`, `11-devops-news.md` and `12-github-news.md` (the files the RSS ingester writes to). Missing files are skipped with a warning, so `npm run ingest:manual` does not read those four files until the map is updated.
+
 ```bash
 npm run ingest:manual
 ```

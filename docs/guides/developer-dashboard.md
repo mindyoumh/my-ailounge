@@ -8,7 +8,7 @@ This is a **specification for developers**, not an implementation. Nothing here 
 
 > **Build ownership:** developers own all implementation. Pick a section, scope it, build it.
 >
-> **Suggested stack (non-binding):** Next.js (App Router) + `better-sqlite3` for local SQLite,
+> **Suggested stack (non-binding):** Next.js (App Router) + Supabase PostgreSQL (the original suggestion was local SQLite via `better-sqlite3`),
 > Tailwind for UI. One reusable shell, multiple panels.
 
 > **Out of scope:** business/operational dashboards (e.g. hot-leads, lead funnel, model-cost).

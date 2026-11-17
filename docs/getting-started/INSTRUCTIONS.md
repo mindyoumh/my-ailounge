@@ -775,7 +775,7 @@ opencode --model "claude-opus-4-6" "Generate a 2FA implementation using TOTP (Ti
 - Model Strategy: [oh-my-opencode-models.md](../tooling/oh-my-opencode-models.md)
 - Quick Start: [AI-installation-tutorial.md](./AI-installation-tutorial.md)
 
-> **Note:** A `CONTRIBUTING.md` guide is coming soon. Until then, reach out to your team lead for contribution guidelines.
+> **Note:** There is no separate `CONTRIBUTING.md`. The contribution workflow (short-lived branch off `main`, PR into `main`) is in the [README Contributing section](../../README.md#contributing).
 
 ### Providing Feedback
 

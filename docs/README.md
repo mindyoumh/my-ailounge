@@ -11,7 +11,7 @@ This folder contains onboarding guides, architecture references, research materi
 1. **`getting-started/INSTRUCTIONS.md`** — Set up your dev environment (GitHub Copilot, opencode CLI, Gemini CLI).
 2. **`../README.md`** (root) — Understand the project purpose and high-level structure.
 3. **`../src/README.md`** — Learn the data pipeline flow (config → ingesters → lib → db).
-4. **`../src/db/README.md`** — Understand the DB schema (originally SQLite, now Supabase PostgreSQL — 9 tables, columns, indexes, seed data, migration history).
+4. **`../src/db/README.md`** — Understand the DB schema (originally SQLite, now Supabase PostgreSQL — 10 tables, columns, indexes, seed data, migration history).
 5. **`../src/ingesters/README.md`** — See how feed data is fetched and stored (4 ingesters, orchestrator).
 6. **`../src/lib/README.md`** — Review shared utilities (DB writes, markdown append, analytics queries).
 7. **`guides/developer-dashboard.md`** — Read the dashboard spec (modules, audiences, requirements).
@@ -45,9 +45,9 @@ This folder contains onboarding guides, architecture references, research materi
 
 | Doc | Description |
 |-----|-------------|
-| `../src/db/README.md` | Database layer: originally SQLite (`better-sqlite3`, WAL mode, `getDb()` singleton), now **Supabase PostgreSQL** (`@supabase/supabase-js`, `serviceClient.from()`, async queries). 10 tables + `user_feed_states` + `user_roles` (RBAC) with full column/index docs, migration history, seed data, env var setup. Includes `service-client.ts` (bypasses RLS), `server-client.ts` (cookie-based auth), `auth-helpers.ts` (role middleware) |
+| `../src/db/README.md` | Database layer: originally SQLite (`better-sqlite3`, WAL mode, `getDb()` singleton), now **Supabase PostgreSQL** (`@supabase/supabase-js`, `serviceClient.from()`, async queries). 10 tables (including `user_feed_states`) + `user_roles` (RBAC, from `rls-policies.sql`) with full column/index docs, migration history, seed data, env var setup. Includes `service-client.ts` (bypasses RLS), `server-client.ts` (cookie-based auth), `auth-helpers.ts` (role middleware) |
 | `supabase-schema.sql` | PostgreSQL DDL for all 10 tables — run this in Supabase SQL editor before seeding. Source of truth for table definitions. `feed_items` now includes `ai_relevance_score`, `ai_relevance_label`, `ai_relevance_reason`, `ai_tldr` columns; `is_pinned`/`is_read` moved to `user_feed_states` table |
-| `rls-policies.sql` | Row Level Security migration: `user_roles` table (`intern`/`lead`/`dev`), auto-assign trigger on signup, `is_lead()` + `is_lead_or_dev()` helpers, Auth Hook domain gate (`before_user_created`), RLS policies for all 10 tables + `user_feed_states`. Run after `supabase-schema.sql` |
+| `rls-policies.sql` | Row Level Security migration: `user_roles` table (`intern`/`lead`/`dev`), auto-assign trigger on signup, `is_lead()` + `is_lead_or_dev()` helpers, Auth Hook domain gate (`before_user_created`), RLS policies for all 10 tables. Run after `supabase-schema.sql` |
 
 ---
 
@@ -104,7 +104,7 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 | `../src/lib/README.md` (cve-matcher, ecosystem-detector, version-fetcher, package-name-map sections) | Vulnerability checker, ecosystem detection, registry version fetchers, name mapping |
 | `../src/config/README.md` (package-suggestions section) | ~181 curated package names for the search combobox |
 | `../src/db/README.md` (watchlist_items table) | `watchlist_items` table schema: columns, `ecosystem` column, risk levels, seed data (14 items) |
-| `rls-policies.sql` | RBAC setup: `user_roles` table, auto-assign trigger, `is_lead()` and `is_lead_or_dev()` helpers, RLS policies for all 10 tables + `user_feed_states` |
+| `rls-policies.sql` | RBAC setup: `user_roles` table, auto-assign trigger, `is_lead()` and `is_lead_or_dev()` helpers, RLS policies for all 10 tables |
 
 ---
 
