@@ -17,6 +17,5 @@ _None logged yet. Copy [`../_TEMPLATE.md`](../_TEMPLATE.md) to log a problem + p
 
 ## Key links
 - R&D task overview → [`../../guides/RnD_Technical_Tasks_Overview.md`](../../guides/RnD_Technical_Tasks_Overview.md)
-- File architecture → [`../../guides/File architecture update.md`](../../guides/File%20architecture%20update.md)
 - Scraper → [`../../../src/scraper.py`](../../../src/scraper.py)
 - Skills → [`../../../.github/skills/`](../../../.github/skills/)

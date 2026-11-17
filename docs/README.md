@@ -37,7 +37,6 @@ This folder contains onboarding guides, architecture references, research materi
 |-----|-------------|
 | `../README.md` (root) | Project overview, high-level structure, scripts |
 | `../src/README.md` | Data pipeline overview: config → ingesters → lib → db, directory relationships, quickstart commands, module status |
-| `guides/File architecture update.md` | Repository folder reorganization plan and execution guide |
 | `guides/RnD_Technical_Tasks_Overview.md` | R&D technical task inventory and planning overview |
 
 ---
