@@ -58,4 +58,3 @@ import { INTERN_TASKS } from "@/src/config/intern-tasks";
 
 - Homepage widget: `components/briefing/intern-tasks.tsx` shows daily rotation + "View all" link
 - Config: `src/config/intern-tasks.ts` (13 tasks, 6 categories, 3 difficulty levels)
-- Plan doc: `docs/archives/2026-07-24/intern-task-board-mvp.md`

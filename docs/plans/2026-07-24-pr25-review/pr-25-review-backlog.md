@@ -4,7 +4,9 @@
 **Reviewed:** 2026-07-24 · Two-pass review (Sonnet + Opus) + engineering gate
 **Scope:** 231 files, +30,519 / −389 — fork consolidation (Supabase migration, ingestion pipelines, log analysis, watchlist, RBAC)
 
-Critical/High findings were fixed in-branch (see commit). Items below are deferred per severity policy — do **not** implement in this PR unless a maintainer promotes them.
+> **Status 2026-11-18:** open items only. Re-checked against `main`: M1, M2, M4, M5, L1, L2 and L4 are still open. M3 is partly resolved (every detached promise now has a `.catch`), but the enrichment is still not awaited. L3 was not re-verified.
+
+Critical/High findings were fixed in-branch. The items below were deferred per severity policy and are candidates for follow-up tickets.
 
 ---
 
@@ -32,9 +34,9 @@ Critical/High findings were fixed in-branch (see commit). Items below are deferr
 - **Refs:** PR #25 · `app/api/logs/route.ts`, `next.config.ts`
 
 ### M3 — Floating async work in watchlist create
-- **Issue:** `app/api/watchlist/route.ts` POST fires `retroactivelyScore(...)` and `fetchLatestVersion(...).then(...)` without awaiting; the version-fetch chain has no `.catch`.
-- **Impact:** On serverless, work after the response returns may be killed mid-flight (version/CVE never persisted); an unhandled rejection can crash the function instance.
-- **Recommendation:** `await` the enrichment, move it to a queue/cron, or use the platform's `waitUntil`; add `.catch` to every detached promise.
+- **Issue:** `app/api/watchlist/route.ts` POST fires `retroactivelyScore(...)`, `fetchLatestVersion(...).then(...)` and the CVE check without awaiting them. Each chain has a `.catch` that logs.
+- **Impact:** On serverless, work after the response returns may be killed mid-flight (version/CVE never persisted).
+- **Recommendation:** `await` the enrichment, move it to a queue/cron, or use the platform's `waitUntil`.
 - **Priority:** Medium
 - **Refs:** PR #25 · `app/api/watchlist/route.ts`
 

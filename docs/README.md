@@ -86,7 +86,6 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 |-----|-------------|
 | `../app/intern-tasks/README.md` | Full page: category pills, difficulty/sort filters, expandable cards, static config — no DB |
 | `../components/intern-tasks/README.md` | InternTaskCard component: expandable sections, category/difficulty color maps |
-| `archives/2026-07-24/intern-task-board-mvp.md` | MVP plan: 8 phases, 7 components, explicit exclusions (no claiming, no completion, no auth) |
 
 ## Dashboard
 
@@ -152,7 +151,11 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 |-----|-------------|
 | `plans/README.md` | Department-level problem statements and potential solutions (executive, marketing, sales, finance, HR, engineering, operations, admin, health) |
 | `plans/_TEMPLATE.md` | Template for documenting new problems and solutions |
-| `archives/2026-07-24/intern-task-board-mvp.md` | Intern Safe Task Board MVP plan — read-only task catalog, 8 implementation phases, explicit exclusions, component tree |
+| `plans/2026-07-24-pr24-review/pr-24-review-backlog.md` | Open Medium/Low findings deferred from the PR #24 review |
+| `plans/2026-07-24-pr25-review/pr-25-review-backlog.md` | Open Medium/Low findings deferred from the PR #25 review |
+| `plans/log-analysis-dashboard-plan.md` | Log Analysis Dashboard plan — Phases 1-2 shipped; future enhancements open |
+| `plans/engineering-intelligence-execution-plan.md` | Engineering Intelligence feed sources — execution plan (mostly shipped, open items listed in its status note) |
+| `plans/engineering-intelligence-implementation-roadmap.md` | Engineering Intelligence roadmap — NVD/CVE ingester and bonus sources still pending |
 
 ---
 
