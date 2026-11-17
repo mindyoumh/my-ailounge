@@ -192,7 +192,7 @@ Prints a per-source summary table after execution.
 
 ### GitHub Actions Cron (replaces browser IngestButton)
 
-The old `IngestButton` component and `ingest.yml` workflow were removed. Ingestion now runs on 3 scheduled GitHub Actions workflows:
+The `IngestButton` was removed from the homepage (its component file in `components/engineering-intelligence/` is now unused) and the old `ingest.yml` workflow was deleted. Ingestion now runs on 3 scheduled GitHub Actions workflows:
 
 | Workflow | Schedule | `INGEST_SOURCES` |
 |----------|----------|------------------|

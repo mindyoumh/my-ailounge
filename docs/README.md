@@ -140,6 +140,14 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 | `research/pricing.md` | AI model pricing comparisons and cost analysis |
 | `research/deepseek-gemini-claude-comparison.md` | Model capability comparison across DeepSeek, Gemini, and Claude |
 | `research/vibe-coding-vs-legacy.md` | Analysis of AI-assisted coding vs traditional development approaches |
+| `research/cve-coverage-review.md` | Whether existing feeds already cover the `cve.org` source request (2026-06-22) |
+| `research/cve-rss-feasibility.md` | Production-viable RSS-based CVE feed options (2026-06-22) |
+| `research/engineering-intelligence-source-validation.md` | URL validation and corrections for the proposed engineering-intelligence feed sources (2026-06-22) |
+| `research/planning-doc-review.md` | Overlap, priority, and consolidation review of the planning documents (2026-06-22) |
+| `my-ailounge.md` | Oracle Cloud Always Free research: verified allocation, caveats, recommendation |
+| `oracle-cloud-always-free-evaluation.md` | Full engineering evaluation of Oracle Cloud Always Free for Mind You infrastructure |
+| `oracle-cloud-always-free-executive-summary.md` | Executive summary of the Oracle Cloud evaluation |
+| `product-engineering-delivery-workflow.md` | Rapid product validation and engineering delivery workflow for departments |
 | `research/third-party-repositories/` | Third-party repository R&D — engineering evaluation of AFFiNE, Plane, and Cal.diy for adoption; start at `README.md`, decisions in `third-party-repository-rnd-synthesis.md` |
 
 ---
