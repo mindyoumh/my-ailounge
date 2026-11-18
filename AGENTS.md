@@ -22,7 +22,7 @@ npm run ingest:rss — RSS feeds only
 npm run ingest:trending — GitHub Trending only (fetches RSS daily/weekly/monthly)
 npm run ingest:manual — Manual feed markdown only (standalone, not in orchestrator)
 npm run ingest:prompts — Prompt Library (curated extras + UI design + community from GitHub)
-npm run db:migrate — Seed Supabase PostgreSQL DB (9 tables). Schema DDL at docs/supabase-schema.sql
+npm run db:migrate — Seed Supabase PostgreSQL DB (10 tables). Schema DDL at docs/supabase-schema.sql
 
 ## GitHub Actions Cron (scheduled ingestion)
 

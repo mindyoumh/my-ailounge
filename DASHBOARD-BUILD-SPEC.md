@@ -13,7 +13,7 @@ Do not rebuild these. Extend them.
 
 | Already in repo                                                         | Path                                     | Status                                                                                                               |
 | ----------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Supabase PostgreSQL schema (10 tables + user_feed_states — migrated from SQLite in June 2026. DDL at `docs/supabase-schema.sql`, RLS at `docs/rls-policies.sql`) | `docs/supabase-schema.sql` (run in Supabase SQL editor), `src/db/schema.ts` (seed only) | ✅ Done |
+| Supabase PostgreSQL schema (10 tables incl. user_feed_states — migrated from SQLite in June 2026. DDL at `docs/supabase-schema.sql`, RLS at `docs/rls-policies.sql`) | `docs/supabase-schema.sql` (run in Supabase SQL editor), `src/db/schema.ts` (seed only) | ✅ Done |
 | DB client (`supabase` singleton via `@supabase/supabase-js`, was `getDb()` for `better-sqlite3`) | `src/db/client.ts` (re-exports `supabase`) | ✅ Done                                                                                                              |
 | Migration entry point                                                   | `src/db/migrate.ts`                      | ✅ Done                                                                                                              |
 | Manual feeds ingester (parses `docs/feeds/*.md`, standalone only)       | `src/ingesters/manual-feeds/index.ts`    | ✅ Done (not part of orchestrator — run via `npm run ingest:manual`)                                                 |
@@ -40,8 +40,7 @@ Do not rebuild these. Extend them.
 | OAuth callback handler                                                  | `app/auth/callback/route.ts`             | ✅ Done                                                                                                              |
 | AuthProvider + useUser hook                                             | `components/auth-provider.tsx`           | ✅ Done                                                                                                              |
 | Page README docs (app/, src/, components/)                              | `*/README.md`                            | ✅ Done                                                                                                              |
-| Agent steerer files (OpenCode + Claude)                                 | `AGENTS.md`, `CLAUDE.md`                 | ✅ Done                                                                                                              |
-| Agent steerer files (OpenCode + Claude)                                 | `AGENTS.md`, `CLAUDE.md`                 | ✅ Done                                                                                                              |
+| Agent instruction file (the only one; no CLAUDE.md)                     | `AGENTS.md`                              | ✅ Done                                                                                                              |
 | Documentation hub                                                       | `docs/README.md`                         | ✅ Done                                                                                                              |
 | Log Analysis Dashboard (upload + explore Zoho/Acuity CSV logs)          | `app/logs/page.tsx`                      | ✅ Done                                                                                                              |
 | Log Analysis API (5 routes: upload, list, detail, errors, patterns, anomalies) | `app/api/logs/`                    | ✅ Done                                                                                                              |
@@ -57,13 +56,13 @@ Do not rebuild these. Extend them.
 | Repo Radar GitHub API client & refresh logic                             | `src/lib/repo-radar.ts`                  | ✅ Done                                                                                                              |
 | Repo Radar ingester (scheduled refresh via orchestrator)                 | `src/ingesters/repo-radar/index.ts`      | ✅ Done                                                                                                              |
 | Repo Radar seed data (14 repos)                                          | `src/config/repo-radar-seed.ts`          | ✅ Done                                                                                                              |
-| `repo_radar_items` table (27 columns) + Navbar "Radar" link              | `src/db/schema.ts`, `components/ui/navbar.tsx` | ✅ Done                                                                                                         |
-| GitHub Actions daily ingestion workflow                                 | `.github/workflows/ingest.yml`           | Exists, unused for now — ingestion is manual via `npm run ingest` (Section 6); cron automation deferred (Appendix A) |
+| `repo_radar_items` table (27 columns) + sidebar "Radar" link             | `docs/supabase-schema.sql`, `components/sidebar/sidebar.tsx` | ✅ Done                                                                                                         |
+| GitHub Actions scheduled ingestion (3 workflows: RSS 12h, HN + Trending 4h, Repo Radar 6h) | `.github/workflows/ingest-rss.yml`, `ingest-hn-trending.yml`, `ingest-repo-radar.yml` | ✅ Done (the old single `ingest.yml` was removed) |
 
 **Stack:**
 
 - Frontend: Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Radix UI, Nivo (bar + pie charts), sonner (toast)
-- Data: **Supabase PostgreSQL** via `@supabase/supabase-js` — 10 tables (+ `user_feed_states`). Originally SQLite via `better-sqlite3` (file at `data/dashboard.db`); migrated June 2026. RLS policies at `docs/rls-policies.sql`.
+- Data: **Supabase PostgreSQL** via `@supabase/supabase-js` — 10 tables (including `user_feed_states`). Originally SQLite via `better-sqlite3` (file at `data/dashboard.db`); migrated June 2026. RLS policies at `docs/rls-policies.sql`.
 - Ingestion: TypeScript ingesters (`src/ingesters/*`) + one legacy Python scraper (`src/scraper.py`)
 - Backend "API": Next.js Route Handlers (`app/api/**/route.ts`) reading/writing Supabase directly via `supabase.from()` —
   no separate server process required for MVP. Python is used for ingestion scripts only
@@ -76,8 +75,7 @@ Do not rebuild these. Extend them.
 Follow this order. Each module is shippable on its own — don't try to build everything before
 shipping Module 1.
 
-> ✅ **Modules 1, 2, 3, 5, and 8 are already built.** See status badges below for what's
-> implemented vs planned. The remaining work is Module 7.
+> ✅ **Modules 1, 2, 3, 5, 7, and 8 are already built.** See status badges below.
 
 | Module                                     | Status                                |
 | ------------------------------------------ | ------------------------------------- |
@@ -148,16 +146,6 @@ Full-text search uses `supabase.ilike("title", "%{q}%")` — meets <200ms on cur
 - **Pagination** — "Prev / Next" buttons with page indicator (`Page N / M`), 50 items per page.
 - **Loading states** — `CardSkeleton` placeholders during fetch.
 - **Empty/error states** — messages for no results, filter mismatch, or fetch failure.
-
-### 2.5 Acceptance criteria (from developer-dashboard.md) — ✅ All met
-
-- [x] All sources (manual, HN, GitHub Trending, RSS) visible in one filterable view
-- [x] Manual add / remove / pin persists across reloads
-- [x] Feed items can be sorted by relevance (watchlist-based scoring)
-- [x] Page-based pagination (50/page) with Prev/Next buttons
-- [x] Ingestion runs on demand via `npm run ingest` (see Section 6)
-- [x] No duplicate rows per `(source, url)` — enforced by the existing `UNIQUE` constraint
-- [x] Full-text title search returns matches under 200ms on a typical day's volume
 
 ---
 
@@ -244,12 +232,11 @@ manually refreshed via `POST /api/watchlist/[id]/cve`.
 
 ---
 
-## 6. Ingestion — Manual for Now (`npm run ingest`)
+## 6. Ingestion (`npm run ingest` + GitHub Actions cron)
 
-> Cron/scheduled automation is **deferred** — see [Appendix A](#appendix-a-deferred-cron-automation-options)
-> for the options that were explored (Render, Vercel Cron, etc.). For now, ingestion runs
-> **on-demand** via a single npm script. You run it whenever you want fresh data; the dashboard
-> reads from Supabase PostgreSQL (migrated from local SQLite `data/dashboard.db` in June 2026).
+> Ingestion runs on a schedule through three GitHub Actions workflows (see `src/ingesters/README.md`)
+> and on-demand via `npm run ingest`. The dashboard reads from Supabase PostgreSQL (migrated from
+> local SQLite in June 2026).
 
 ### 6.1 What was built
 
@@ -293,19 +280,7 @@ RSS feed URLs are defined in `src/ingesters/rss/feeds.ts` — 20 feeds across 9 
 (AI, Next.js, Django, Security, Cloud, WordPress, Docker, DevOps, GitHub). Each entry specifies `url`, `category`, and
 the markdown feed file to append to. To add a new feed, add an entry to this array.
 
-### 6.4 Acceptance criteria (all ✅ met)
-
-- [x] `npm run ingest` runs all three ingesters (HN, GitHub Trending, RSS) and exits cleanly
-- [x] Each ingester logs an inserted/skipped summary
-- [x] Re-running `npm run ingest` does not create duplicate rows (`UNIQUE (source, url)` enforced)
-- [x] All sources visible in one filterable `/feed` view after running the script
-- [x] Full-text title search returns matches under 200ms on a typical day's volume
-
-> Note: the original `developer-dashboard.md` acceptance criterion "Scheduled ingestion runs
-> without manual steps" is intentionally **not** in scope right now. Revisit once an automation
-> option from Appendix A is chosen.
-
-### 6.5 Legacy `src/scraper.py`
+### 6.4 Legacy `src/scraper.py`
 
 The Python scraper (`src/scraper.py`) previously wrote GitHub Trending results to `ideas/trending.md` + Slack.
 The `ideas/trending.md` file has been removed — the TypeScript GitHub Trending ingester now fetches
@@ -319,7 +294,7 @@ The scraper still exists for Slack notifications but is separate from the dashbo
 ```
 app/          → app/README.md        # 9 pages (/, /login, /signup, /feed, /watchlist, /logs, /intern-tasks, /repo-radar, /prompts) + auth callback + 10 API route groups (feed, watchlist, logs, ingest, repo-radar, stats, prompts)
 components/   → components/README.md # 10 shadcn/ui primitives + 8 briefing components + 2 prompt components + 4 dashboard widgets + 4 log components + command-palette + intern-tasks + sidebar + shell + auth-provider + theme
-src/          → src/README.md        # 6 ingesters (4 in orchestrator + 1 standalone repo-radar + 1 standalone prompts) + DB (9 tables + browser/server clients) + analytics + log-parser + repo-radar + relevance-scorer + engagement-scorer + retroactive-scorer
+src/          → src/README.md        # 6 ingesters (4 in orchestrator + 1 standalone repo-radar + 1 standalone prompts) + DB (10 tables + browser/server clients) + analytics + log-parser + repo-radar + relevance-scorer + engagement-scorer + retroactive-scorer
   ├── db/     → src/db/README.md
   ├── ingesters/ → src/ingesters/README.md
   ├── lib/    → src/lib/README.md
@@ -335,7 +310,7 @@ docs/         → docs/README.md       # Onboarding, plans, research, feeds, aud
 
 ## 8. What's Left to Build
 
-> Steps 1–18 below are **already complete**. The remaining work is Module 7 (Prompt Library).
+> All steps below are **already complete**.
 
 ### ✅ Already Built (MVP complete)
 
@@ -353,7 +328,7 @@ docs/         → docs/README.md       # Onboarding, plans, research, feeds, aud
 | 7    | Engineering Briefing homepage (5 sections + stats)        | ✅     |
 | 8    | Stack Watchlist (/watchlist) with inline editing          | ✅     |
 | 9    | Page READMEs for app/, src/, components/                  | ✅     |
-| 10   | AGENTS.md + CLAUDE.md steerer files                       | ✅     |
+| 10   | AGENTS.md agent instruction file                          | ✅     |
 | 11   | Log Analysis Dashboard: upload, parse, chart CSV logs     | ✅     |
 | 12   | Log Analysis API: 5 routes (upload, list, detail, errors, patterns, anomalies) | ✅     |
 | 13   | Log parser: column detection, pattern grouping, anomaly detection | ✅     |
@@ -393,58 +368,6 @@ docs/         → docs/README.md       # Onboarding, plans, research, feeds, aud
 
 **Modules 1, 2, 3, 5, 7, and 8 are all built.** The MVP is complete. Additional features built: command palette, relevance scoring, engagement scoring, retroactive scoring, StackSummary widget, feed pagination, watchlist enhancements, auth system, ingestion health panel.
 
-### Bonus — Scheduled Ingestion (not yet implemented)
+### Scheduled Ingestion
 
-> **Status: deferred.** The dashboard currently uses manual ingestion (`npm run ingest`, see
-> Section 6). The notes below were explored for automating ingestion on a schedule, but are
-> parked until a clearly free/low-friction option is settled on. Kept here for reference when
-> automation is picked back up — none of this needs to be built right now.
-
-### A.1 Option A — Next.js API route + external cron pinger (lowest effort)
-
-Create `app/api/cron/ingest/route.ts` that runs all ingesters via `Promise.allSettled(...)`,
-protected by a `Bearer ${process.env.CRON_SECRET}` auth check. Then have something call it
-daily. Free/cheap options:
-
-- **cron-job.org** — schedule an HTTP GET to your deployed URL (free, no account needed)
-- **Vercel Cron Jobs** — add `vercel.json` with `"crons": [{ "path": "/api/cron/ingest", "schedule": "0 0 * * *" }]`
-- **Uptime monitoring** — UptimeRobot / Healthchecks.io repurposed as daily pingers
-
-### A.3 Option B — Self-hosted: system cron + a small Python/Node script
-
-If the dashboard runs on a VPS or your own machine/server (not a serverless platform), skip
-HTTP entirely and run the ingesters as a scheduled OS process:
-
-```bash
-# crontab -e
-0 0 * * * cd /path/to/dashboard && npx tsx src/ingesters/run-all.ts >> /var/log/ingest.log 2>&1
-```
-
-(`src/ingesters/run-all.ts` already exists and does this — see Section 6.1). This keeps "run
-everything" logic in one place regardless of how it's triggered.
-
-### A.4 Option C — Database-triggered / on-demand (no schedule at all)
-
-For low-traffic internal tools, "daily" freshness is often good enough achieved lazily:
-
-- Store `last_ingested_at` in the `kv_store` table (see Section 2.4).
-- On each dashboard page load (Server Component), check if `last_ingested_at` is >24h old.
-- If so, kick off ingestion in the background (`after()` in Next.js, or a fire-and-forget
-  `fetch` to the cron route) and update `last_ingested_at` immediately to avoid duplicate
-  triggers from concurrent requests.
-
-Trade-off: the _first_ visitor of the day gets slightly stale data (and triggers the refresh
-for everyone after). Fine for an internal tool with a handful of users; not fine if you need
-guaranteed freshness regardless of traffic.
-
-### A.5 Recommendation (when revisiting this)
-
-The free options are: GitHub Actions on a public repo (already set up, see
-`.github/workflows/ingest.yml`), Vercel Cron on a free Hobby deployment (A.1), or cron-job.org
-pinging a free-tier endpoint (A.1). Render's Cron Job (A.2) is a paid service type — keep it in
-mind if budget isn't a constraint later, but it's not the first thing to try given the "find a
-free way" goal.
-
-All 4 ingesters are implemented. Next step: keep `.github/workflows/ingest.yml` as-is and
-simply point it at `npm run ingest` instead of the per-ingester steps it currently has.
-That gets scheduling back without inventing a new platform.
+Shipped: three GitHub Actions cron workflows run the ingesters (`.github/workflows/ingest-rss.yml`, `ingest-hn-trending.yml`, `ingest-repo-radar.yml`). See `src/ingesters/README.md` for schedules and secrets. The earlier cron-option notes (Vercel Cron, cron-job.org, self-hosted crontab) were dropped.

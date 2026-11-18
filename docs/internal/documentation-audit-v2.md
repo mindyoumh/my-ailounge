@@ -1,5 +1,7 @@
 # Documentation Audit v2
 
+> **Status 2026-11-18:** point-in-time snapshot from June 2026, not maintained. Paths and counts predate the Supabase migration and the three scheduled workflows. For current documentation coverage use [`docs/README.md`](../README.md).
+
 Re-evaluation of all documentation status after creation of 5 new README files:
 
 | New File | Location |

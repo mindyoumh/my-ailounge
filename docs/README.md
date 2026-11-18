@@ -11,14 +11,14 @@ This folder contains onboarding guides, architecture references, research materi
 1. **`getting-started/INSTRUCTIONS.md`** — Set up your dev environment (GitHub Copilot, opencode CLI, Gemini CLI).
 2. **`../README.md`** (root) — Understand the project purpose and high-level structure.
 3. **`../src/README.md`** — Learn the data pipeline flow (config → ingesters → lib → db).
-4. **`../src/db/README.md`** — Understand the DB schema (originally SQLite, now Supabase PostgreSQL — 9 tables, columns, indexes, seed data, migration history).
+4. **`../src/db/README.md`** — Understand the DB schema (originally SQLite, now Supabase PostgreSQL — 10 tables, columns, indexes, seed data, migration history).
 5. **`../src/ingesters/README.md`** — See how feed data is fetched and stored (4 ingesters, orchestrator).
 6. **`../src/lib/README.md`** — Review shared utilities (DB writes, markdown append, analytics queries).
 7. **`guides/developer-dashboard.md`** — Read the dashboard spec (modules, audiences, requirements).
 8. **`feeds/feeds-format-guide.md`** — Learn the markdown feed format for manual entries.
 9. **`tooling/agentic-coding-attribute-matrix.md`** — Understand AI coding patterns used in this repo.
 10. **`../.github/workflows/`** — Understand how scheduled ingestion runs via 3 GitHub Actions cron workflows.
-11. **`post-mvp-roadmap.md`** — See the planned feature roadmap (4 tiers, 16 items).
+11. **`post-mvp-roadmap.md`** — See the planned feature roadmap (4 tiers, 15 items).
 
 ---
 
@@ -37,7 +37,6 @@ This folder contains onboarding guides, architecture references, research materi
 |-----|-------------|
 | `../README.md` (root) | Project overview, high-level structure, scripts |
 | `../src/README.md` | Data pipeline overview: config → ingesters → lib → db, directory relationships, quickstart commands, module status |
-| `guides/File architecture update.md` | Repository folder reorganization plan and execution guide |
 | `guides/RnD_Technical_Tasks_Overview.md` | R&D technical task inventory and planning overview |
 
 ---
@@ -46,9 +45,9 @@ This folder contains onboarding guides, architecture references, research materi
 
 | Doc | Description |
 |-----|-------------|
-| `../src/db/README.md` | Database layer: originally SQLite (`better-sqlite3`, WAL mode, `getDb()` singleton), now **Supabase PostgreSQL** (`@supabase/supabase-js`, `serviceClient.from()`, async queries). 10 tables + `user_feed_states` + `user_roles` (RBAC) with full column/index docs, migration history, seed data, env var setup. Includes `service-client.ts` (bypasses RLS), `server-client.ts` (cookie-based auth), `auth-helpers.ts` (role middleware) |
+| `../src/db/README.md` | Database layer: originally SQLite (`better-sqlite3`, WAL mode, `getDb()` singleton), now **Supabase PostgreSQL** (`@supabase/supabase-js`, `serviceClient.from()`, async queries). 10 tables (including `user_feed_states`) + `user_roles` (RBAC, from `rls-policies.sql`) with full column/index docs, migration history, seed data, env var setup. Includes `service-client.ts` (bypasses RLS), `server-client.ts` (cookie-based auth), `auth-helpers.ts` (role middleware) |
 | `supabase-schema.sql` | PostgreSQL DDL for all 10 tables — run this in Supabase SQL editor before seeding. Source of truth for table definitions. `feed_items` now includes `ai_relevance_score`, `ai_relevance_label`, `ai_relevance_reason`, `ai_tldr` columns; `is_pinned`/`is_read` moved to `user_feed_states` table |
-| `rls-policies.sql` | Row Level Security migration: `user_roles` table (`intern`/`lead`/`dev`), auto-assign trigger on signup, `is_lead()` + `is_lead_or_dev()` helpers, Auth Hook domain gate (`before_user_created`), RLS policies for all 10 tables + `user_feed_states`. Run after `supabase-schema.sql` |
+| `rls-policies.sql` | Row Level Security migration: `user_roles` table (`intern`/`lead`/`dev`), auto-assign trigger on signup, `is_lead()` + `is_lead_or_dev()` helpers, Auth Hook domain gate (`before_user_created`), RLS policies for all 10 tables. Run after `supabase-schema.sql` |
 
 ---
 
@@ -86,14 +85,13 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 |-----|-------------|
 | `../app/intern-tasks/README.md` | Full page: category pills, difficulty/sort filters, expandable cards, static config — no DB |
 | `../components/intern-tasks/README.md` | InternTaskCard component: expandable sections, category/difficulty color maps |
-| `archives/2026-07-24/intern-task-board-mvp.md` | MVP plan: 8 phases, 7 components, explicit exclusions (no claiming, no completion, no auth) |
 
 ## Dashboard
 
 | Doc | Description |
 |-----|-------------|
 | `guides/developer-dashboard.md` | Dashboard requirements specification: 3 audiences (lead devs, interns, team), 8 modules with feature descriptions, non-binding stack suggestions |
-| `post-mvp-roadmap.md` | Post-MVP feature roadmap: 4 tiers (Automation & Intelligence, Dashboard Enhancements, Quality & Infrastructure, Polish) with 16 feature items |
+| `post-mvp-roadmap.md` | Post-MVP feature roadmap: 4 tiers (Automation & Intelligence, Dashboard Enhancements, Quality & Infrastructure, Polish) with 15 feature items |
 
 ---
 
@@ -106,7 +104,7 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 | `../src/lib/README.md` (cve-matcher, ecosystem-detector, version-fetcher, package-name-map sections) | Vulnerability checker, ecosystem detection, registry version fetchers, name mapping |
 | `../src/config/README.md` (package-suggestions section) | ~181 curated package names for the search combobox |
 | `../src/db/README.md` (watchlist_items table) | `watchlist_items` table schema: columns, `ecosystem` column, risk levels, seed data (14 items) |
-| `rls-policies.sql` | RBAC setup: `user_roles` table, auto-assign trigger, `is_lead()` and `is_lead_or_dev()` helpers, RLS policies for all 10 tables + `user_feed_states` |
+| `rls-policies.sql` | RBAC setup: `user_roles` table, auto-assign trigger, `is_lead()` and `is_lead_or_dev()` helpers, RLS policies for all 10 tables |
 
 ---
 
@@ -142,6 +140,14 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 | `research/pricing.md` | AI model pricing comparisons and cost analysis |
 | `research/deepseek-gemini-claude-comparison.md` | Model capability comparison across DeepSeek, Gemini, and Claude |
 | `research/vibe-coding-vs-legacy.md` | Analysis of AI-assisted coding vs traditional development approaches |
+| `research/cve-coverage-review.md` | Whether existing feeds already cover the `cve.org` source request (2026-06-22) |
+| `research/cve-rss-feasibility.md` | Production-viable RSS-based CVE feed options (2026-06-22) |
+| `research/engineering-intelligence-source-validation.md` | URL validation and corrections for the proposed engineering-intelligence feed sources (2026-06-22) |
+| `research/planning-doc-review.md` | Overlap, priority, and consolidation review of the planning documents (2026-06-22) |
+| `my-ailounge.md` | Oracle Cloud Always Free research: verified allocation, caveats, recommendation |
+| `oracle-cloud-always-free-evaluation.md` | Full engineering evaluation of Oracle Cloud Always Free for Mind You infrastructure |
+| `oracle-cloud-always-free-executive-summary.md` | Executive summary of the Oracle Cloud evaluation |
+| `product-engineering-delivery-workflow.md` | Rapid product validation and engineering delivery workflow for departments |
 | `research/third-party-repositories/` | Third-party repository R&D — engineering evaluation of AFFiNE, Plane, and Cal.diy for adoption; start at `README.md`, decisions in `third-party-repository-rnd-synthesis.md` |
 
 ---
@@ -152,7 +158,11 @@ Auth is powered by Supabase Auth. Pages are exempt from middleware (see `proxy.t
 |-----|-------------|
 | `plans/README.md` | Department-level problem statements and potential solutions (executive, marketing, sales, finance, HR, engineering, operations, admin, health) |
 | `plans/_TEMPLATE.md` | Template for documenting new problems and solutions |
-| `archives/2026-07-24/intern-task-board-mvp.md` | Intern Safe Task Board MVP plan — read-only task catalog, 8 implementation phases, explicit exclusions, component tree |
+| `plans/2026-07-24-pr24-review/pr-24-review-backlog.md` | Open Medium/Low findings deferred from the PR #24 review |
+| `plans/2026-07-24-pr25-review/pr-25-review-backlog.md` | Open Medium/Low findings deferred from the PR #25 review |
+| `plans/log-analysis-dashboard-plan.md` | Log Analysis Dashboard plan — Phases 1-2 shipped; future enhancements open |
+| `plans/engineering-intelligence-execution-plan.md` | Engineering Intelligence feed sources — execution plan (mostly shipped, open items listed in its status note) |
+| `plans/engineering-intelligence-implementation-roadmap.md` | Engineering Intelligence roadmap — NVD/CVE ingester and bonus sources still pending |
 
 ---
 

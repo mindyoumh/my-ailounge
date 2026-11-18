@@ -8,7 +8,7 @@ This is a **specification for developers**, not an implementation. Nothing here 
 
 > **Build ownership:** developers own all implementation. Pick a section, scope it, build it.
 >
-> **Suggested stack (non-binding):** Next.js (App Router) + `better-sqlite3` for local SQLite,
+> **Suggested stack (non-binding):** Next.js (App Router) + Supabase PostgreSQL (the original suggestion was local SQLite via `better-sqlite3`),
 > Tailwind for UI. One reusable shell, multiple panels.
 
 > **Out of scope:** business/operational dashboards (e.g. hot-leads, lead funnel, model-cost).
@@ -135,7 +135,7 @@ Security audit, Documentation, Intern mentoring, Stakeholder emails.
 
 ### 8. Intern Task Board — Safe Mode (MVP)
 
-**Status:** Planned — see [`docs/archives/2026-07-24/intern-task-board-mvp.md`](../archives/2026-07-24/intern-task-board-mvp.md)
+**Status:** Shipped — see [`app/intern-tasks/README.md`](../../app/intern-tasks/README.md)
 
 Where interns fit. Instead of production data, give them: synthetic tasks, mock APIs, local SQLite,
 generated fixtures, isolated branches, fake logs, fake incidents, code-review exercises.
@@ -216,13 +216,7 @@ feed_items (
 )
 ```
 
-### Acceptance criteria
-
-- [ ] All three sources visible in one filterable view.
-- [ ] Manual add / remove / pin persists across reloads.
-- [ ] Scheduled ingestion runs without manual steps.
-- [ ] No duplicate rows per external item (enforced by `UNIQUE (source, url)`).
-- [ ] Full-text title search returns matches under 200 ms on a typical day's volume.
+**Status:** all five acceptance criteria for this module are met by the shipped feed (see `DASHBOARD-BUILD-SPEC.md`).
 
 **Notes.** One app, `source` column splits the feeds — not three half-apps. Respect API rate limits/terms.
 

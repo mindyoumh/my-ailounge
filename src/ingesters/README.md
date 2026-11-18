@@ -119,6 +119,8 @@ Parses `docs/feeds/*.md` files and upserts entries into Supabase.
 | `09-devops-news.md` | `devops` |
 | `10-github-news.md` | `github` |
 
+> **Known drift:** `FILE_CATEGORY_MAP` in `manual-feeds/index.ts` still names `09-devops-news.md` and `10-github-news.md`, but `docs/feeds/` now holds `09-wordpress-news.md`, `10-docker-news.md`, `11-devops-news.md` and `12-github-news.md` (the files the RSS ingester writes to). Missing files are skipped with a warning, so `npm run ingest:manual` does not read those four files until the map is updated.
+
 ```bash
 npm run ingest:manual
 ```
@@ -190,7 +192,7 @@ Prints a per-source summary table after execution.
 
 ### GitHub Actions Cron (replaces browser IngestButton)
 
-The old `IngestButton` component and `ingest.yml` workflow were removed. Ingestion now runs on 3 scheduled GitHub Actions workflows:
+The `IngestButton` was removed from the homepage (its component file in `components/engineering-intelligence/` is now unused) and the old `ingest.yml` workflow was deleted. Ingestion now runs on 3 scheduled GitHub Actions workflows:
 
 | Workflow | Schedule | `INGEST_SOURCES` |
 |----------|----------|------------------|
