@@ -1,7 +1,6 @@
 "use client";
 
 import { ClipboardCopy, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
-import { toast } from "sonner";
 import { CATEGORY_MAP, SOURCE_LABELS } from "./category-filter";
 
 interface PromptItem {

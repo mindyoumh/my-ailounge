@@ -18,13 +18,6 @@ export interface IngestionStatus {
   elapsedMs: number | null;
 }
 
-export async function getTotalItems(): Promise<number> {
-  const { count } = await serviceClient
-    .from("feed_items")
-    .select("*", { count: "exact", head: true });
-  return count ?? 0;
-}
-
 export async function getItemsToday(): Promise<number> {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -86,15 +79,6 @@ export async function getLastGlobalIngestion(): Promise<string | null> {
     .from("kv_store")
     .select("value")
     .eq("key", "ingest:last_run:all")
-    .single();
-  return data?.value ?? null;
-}
-
-export async function getGlobalIngestionStatus(): Promise<string | null> {
-  const { data } = await serviceClient
-    .from("kv_store")
-    .select("value")
-    .eq("key", "ingest:status:all")
     .single();
   return data?.value ?? null;
 }

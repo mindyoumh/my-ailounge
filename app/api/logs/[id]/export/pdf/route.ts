@@ -13,12 +13,6 @@ function truncate(text: string, maxLen: number): string {
   return text.substring(0, maxLen) + "...";
 }
 
-function patternSummary(key: string): string {
-  const clean = sanitize(key);
-  if (clean.length <= 120) return clean;
-  return truncate(clean, 80) + " — See dashboard drill-down for complete details.";
-}
-
 function anomalySummary(desc: string): string {
   const clean = sanitize(desc);
   const stripped = clean.replace(/^Error spike on \d{4}-\d{2}-\d{2}:?\s*/, "");
