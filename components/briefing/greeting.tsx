@@ -1,7 +1,6 @@
 "use client";
 
 import { useUser } from "@/components/auth-provider";
-import { Sparkles } from "lucide-react";
 
 function getGreeting(): string {
   const hour = new Date().getHours();

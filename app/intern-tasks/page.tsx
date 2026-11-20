@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { INTERN_TASKS, type InternTask } from "@/src/config/intern-tasks";
+import { INTERN_TASKS } from "@/src/config/intern-tasks";
 import { InternTaskCard } from "@/components/intern-tasks/intern-task-card";
 import { BookOpen, GraduationCap, ListOrdered } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,8 +22,6 @@ const CATEGORIES = [
   { value: "docs-research", label: "Docs & Research" },
   { value: "git-workflow", label: "Git Workflow" },
 ] as const;
-
-const DIFFICULTIES = ["all", "beginner", "intermediate", "advanced"] as const;
 
 const CATEGORY_COLORS: Record<string, string> = {
   "synthetic-data":

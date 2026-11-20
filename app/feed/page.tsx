@@ -76,19 +76,6 @@ function formatDate(dateStr: string | null): string {
   });
 }
 
-function timeAgo(dateStr: string): string {
-  const now = Date.now();
-  const then = new Date(dateStr).getTime();
-  const diff = now - then;
-  const mins = Math.floor(diff / 60000);
-  if (mins < 60) return `${mins}m`;
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs}h`;
-  const days = Math.floor(hrs / 24);
-  if (days < 30) return `${days}d`;
-  return formatDate(dateStr);
-}
-
 const SOURCE_BADGE: Record<string, string> = {
   hn: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
   rss: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
