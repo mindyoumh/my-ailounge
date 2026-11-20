@@ -8,12 +8,12 @@ Reusable React components used by the Developer Dashboard pages.
 |------------------|----------|
 | `ui/` | shadcn/ui-style primitives — 12 components (Button, Card, Badge, Input, Select, Tabs, Separator, Table, Skeleton, DropdownMenu, Command, Dialog) |
 | `briefing/` | Engineering Briefing homepage components — 9 components (Greeting, StatCard, FeedSection, FeedItemCard, FeaturedNews, FeedBreakdown, InternTasks, IngestHealth, StackSummary, FeaturedPrompt) |
-| `sidebar/` | Fixed left sidebar — user info, nav, logout, Quick Stats |
+| `sidebar/` | Fixed left sidebar — user info, nav, theme toggle, logout, Quick Stats |
 | `prompts/` | Prompt Library — 3 components (PromptCard, CategoryFilter, SourceFilter) |
 | `logs/` | Log Analysis Dashboard — 9 components (CsvUpload, OverviewCards, ErrorTrendChart, SourceBreakdown, SeverityLegend, PatternDrillDown, DateFilter, PatternSearch, SeverityFilter) |
 | `command-palette/` | Command Palette — Cmd+K palette, searches pages/feed/prompts/watchlist/radar |
 | `intern-tasks/` | Intern Safe Task Board — 1 component (InternTaskCard) with expandable detail sections |
-| `theme-provider.tsx` | Dark/light mode React Context |
+| `theme-provider.tsx` | Dark/light mode React Context (used by Sidebar theme toggle) |
 | `auth-provider.tsx` | Supabase Auth context — `AuthProvider` + `useUser()` hook (user, role, loading, signOut, refreshRole) |
 | `shell.tsx` | Layout shell — hides Sidebar on `/login` and `/signup` routes |
 
