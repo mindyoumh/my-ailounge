@@ -1,6 +1,6 @@
 # `components/ui/` — shadcn/ui Primitives
 
-13 UI components, standard shadcn/ui with minimal customization.
+12 UI components, standard shadcn/ui with minimal customization.
 
 ## Component Reference
 
@@ -12,7 +12,6 @@
 | **Input** | No | — | ForwardRef, standard HTML input props, `type` prop |
 | **Select** | Yes | `@radix-ui/react-select` | 10 exports: Root, Group, Value, Trigger, Content, Label, Item, Separator, ScrollUpButton, ScrollDownButton |
 | **Tabs** | Yes | `@radix-ui/react-tabs` | 3 exports: TabsList, TabsTrigger, TabsContent |
-| **Toggle** | Yes | `@radix-ui/react-toggle` | 2 variants (default, outline), 3 sizes (default, sm, lg) via `cva` |
 | **Separator** | Yes | `@radix-ui/react-separator` | Orientation prop: `horizontal` (default) or `vertical` |
 | **Table** | No | — | 6 sub-components: Table, TableHeader, TableBody, TableRow, TableHead, TableCell |
 | **Skeleton** | No | — | `Skeleton` (shimmer animation) + `CardSkeleton` composite loader |

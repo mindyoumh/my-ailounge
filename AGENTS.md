@@ -39,7 +39,6 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 | Trap                            | Truth                                                                                               |
 | ------------------------------- | --------------------------------------------------------------------------------------------------- |
 | @/ maps to src/                 | ❌ @/\* maps to project root — use @/src/db/client, NOT @/db/client                                 |
-| TW config in tailwind.config.ts | ❌ TW v4 uses app/globals.css @theme — the .ts file is vestigial                                    |
 | PostCSS uses tailwindcss        | ❌ Uses @tailwindcss/postcss only                                                                   |
 | data/dashboard.db is committed  | ❌ Gitignored — legacy SQLite file, no longer used. Now using remote Supabase PostgreSQL             |
 | 'use client' on every component | ❌ Server-first. Only add 'use client' for Radix primitives, event handlers, state, ThemeProvider   |
@@ -99,7 +98,7 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 
 ## New Packages (Log Analysis Dashboard + Supabase Migration)
 
-- `@nivo/bar`, `@nivo/pie`, `@nivo/core` — Nivo charting for error trend bar chart and source donut
+- `@nivo/bar`, `@nivo/pie` — Nivo charting for error trend bar chart and source donut
 - `csv-parse` — CSV parsing in `src/lib/log-parser.ts`
 - `sonner` — Toast notifications for client interactions
 - `cmdk` — Command menu primitive for `CommandPalette`
