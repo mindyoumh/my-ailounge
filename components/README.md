@@ -25,7 +25,7 @@ All components import `cn()` from `@/lib/utils` — the shadcn pattern using `cl
 
 - `ui/` components are standard shadcn/ui — minimal customization from defaults
 - `briefing/` + `sidebar/` are custom-built for this project
-- `"use client"` where needed: Radix primitives, Sidebar (usePathname), ThemeProvider, FeedBreakdown (Nivo), BreakdownCard, IngestButton, CsvUpload, ErrorTrendChart, SourceBreakdown
+- `"use client"` where needed: Radix primitives, Sidebar (usePathname), ThemeProvider, FeedBreakdown (Nivo), CsvUpload, ErrorTrendChart, SourceBreakdown
 - Server components call `getDb()` at request time — no `"use client"` needed
 
 ## Sub-READMEs

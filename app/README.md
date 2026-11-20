@@ -63,7 +63,7 @@ Wraps all pages with:
 - **AuthProvider** — Supabase Auth context (from `components/auth-provider`), provides `useUser()` with `{ user, loading, signOut }`
 - **Shell** — layout wrapper (from `components/shell`) that hides `Sidebar` on `/login` and `/signup` routes
 - **Sidebar** — fixed left sidebar (240px) with nav, theme toggle, quick stats, user avatar + logout (from `components/sidebar/sidebar`)
-- **Toaster** — toast notifications via `sonner` (used by `IngestButton` and future components)
+- **Toaster** — toast notifications via `sonner` for client interactions
 - **CommandPalette** — Cmd+K keyboard palette for quick navigation and search (from `components/command-palette`)
 
 ```tsx

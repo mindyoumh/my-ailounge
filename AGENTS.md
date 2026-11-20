@@ -101,7 +101,7 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 
 - `@nivo/bar`, `@nivo/pie`, `@nivo/core` — Nivo charting for error trend bar chart and source donut
 - `csv-parse` — CSV parsing in `src/lib/log-parser.ts`
-- `sonner` — Toast notifications for `IngestButton` and other client interactions
+- `sonner` — Toast notifications for client interactions
 - `cmdk` — Command menu primitive for `CommandPalette`
 - `@supabase/supabase-js` — Supabase PostgreSQL client (replaced `better-sqlite3`)
 - `dotenv` — Env variable loading for ingesters and scripts
