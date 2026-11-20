@@ -61,10 +61,10 @@ const { data: { user } } = await supabase.auth.getUser();
 
 ### `client.ts`
 
-Convenience re-export. Now re-exports `serviceClient` from `service-client.ts`. Kept as the same import path so consuming code didn't need import changes:
+Convenience module. Exports `getDb()`, which returns `serviceClient` from `service-client.ts`, and `closeDb()`:
 
 ```ts
-import { serviceClient, getDb } from "@/src/db/client";
+import { getDb } from "@/src/db/client";
 // getDb() returns serviceClient
 // closeDb() is a no-op with Supabase
 ```
@@ -330,7 +330,7 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ## Usage
 
 ```ts
-import { serviceClient } from "@/src/db/client";
+import { serviceClient } from "@/src/db/service-client";
 
 // Read (async)
 const { data: items, error } = await serviceClient

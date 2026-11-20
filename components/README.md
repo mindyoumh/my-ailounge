@@ -6,7 +6,7 @@ Reusable React components used by the Developer Dashboard pages.
 
 | Directory / File | Contents |
 |------------------|----------|
-| `ui/` | shadcn/ui-style primitives — 13 components (Button, Card, Badge, Input, Select, Tabs, Toggle, Separator, Table, Skeleton, DropdownMenu, Command, Dialog) |
+| `ui/` | shadcn/ui-style primitives — 12 components (Button, Card, Badge, Input, Select, Tabs, Separator, Table, Skeleton, DropdownMenu, Command, Dialog) |
 | `briefing/` | Engineering Briefing homepage components — 9 components (Greeting, StatCard, FeedSection, FeedItemCard, FeaturedNews, FeedBreakdown, InternTasks, IngestHealth, StackSummary, FeaturedPrompt) |
 | `sidebar/` | Fixed left sidebar — user info, nav, theme toggle, logout, Quick Stats |
 | `prompts/` | Prompt Library — 3 components (PromptCard, CategoryFilter, SourceFilter) |

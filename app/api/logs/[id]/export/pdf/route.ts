@@ -437,7 +437,6 @@ function buildExecutiveSummary(
   anomalies: Record<string, unknown>[],
   methodsList: { method: string; count: number }[],
   totalRows: number,
-  errorCount: number,
 ): string[] {
   const items: string[] = [];
 
@@ -600,7 +599,7 @@ export async function GET(
 
   // ── Executive Summary ──
   report.sectionTitle("Executive Summary");
-  const execLines = buildExecutiveSummary(patterns, anomalies, methodsList, totalRows, errorCount);
+  const execLines = buildExecutiveSummary(patterns, anomalies, methodsList, totalRows);
   if (execLines.length > 0) {
     report.drawBulletLines(execLines);
   } else {

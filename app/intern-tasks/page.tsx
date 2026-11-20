@@ -47,12 +47,10 @@ const DIFFICULTY_COLORS: Record<string, string> = {
 };
 
 function CategoryPill({
-  value,
   label,
   active,
   onClick,
 }: {
-  value: string;
   label: string;
   active: boolean;
   onClick: () => void;
@@ -139,7 +137,6 @@ export default function InternTasksPage() {
             {CATEGORIES.map((cat) => (
               <CategoryPill
                 key={cat.value}
-                value={cat.value}
                 label={cat.label}
                 active={category === cat.value}
                 onClick={() => setCategory(cat.value)}

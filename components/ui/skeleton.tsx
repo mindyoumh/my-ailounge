@@ -26,13 +26,4 @@ export function CardSkeleton() {
   );
 }
 
-export function StatCardSkeleton() {
-  return (
-    <div className="rounded-xl border bg-card p-4 space-y-2">
-      <Skeleton className="h-4 w-24" />
-      <Skeleton className="h-8 w-12" />
-    </div>
-  );
-}
-
 export { Skeleton };
