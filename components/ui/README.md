@@ -15,7 +15,7 @@
 | **Toggle** | Yes | `@radix-ui/react-toggle` | 2 variants (default, outline), 3 sizes (default, sm, lg) via `cva` |
 | **Separator** | Yes | `@radix-ui/react-separator` | Orientation prop: `horizontal` (default) or `vertical` |
 | **Table** | No | — | 6 sub-components: Table, TableHeader, TableBody, TableRow, TableHead, TableCell |
-| **Skeleton** | No | — | `Skeleton` (shimmer animation) + `CardSkeleton` + `StatCardSkeleton` composite loaders |
+| **Skeleton** | No | — | `Skeleton` (shimmer animation) + `CardSkeleton` composite loader |
 | **DropdownMenu** | Yes | `@radix-ui/react-dropdown-menu` | 16 exports: Root, Trigger, Content, Item, CheckboxItem, RadioItem, Label, Separator, Shortcut, Group, Portal, Sub, SubContent, SubTrigger, RadioGroup |
 | **Command** | Yes | `cmdk` | Command dialog with search input, group labels, item list, empty state, `shouldFilter` prop |
 | **Dialog** | Yes | `@radix-ui/react-dialog` | 5 exports: Root, Trigger, Portal, Overlay, Content (with animation) |

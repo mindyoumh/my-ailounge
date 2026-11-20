@@ -129,7 +129,6 @@ function LogsContent() {
   const [trendCustomRange, setTrendCustomRange] = useState<{ from: string; to: string } | null>(null);
   const [patternsCustomRange, setPatternsCustomRange] = useState<{ from: string; to: string } | null>(null);
   const [anomaliesCustomRange, setAnomaliesCustomRange] = useState<{ from: string; to: string } | null>(null);
-  const [loadingDetail, setLoadingDetail] = useState(false);
   const [showUpload, setShowUpload] = useState(false);
   const [deleting, setDeleting] = useState<number | null>(null);
 
@@ -155,13 +154,8 @@ function LogsContent() {
   };
 
   const fetchDetail = useCallback(async (id: number) => {
-    setLoadingDetail(true);
-    try {
-      const res = await fetch(`/api/logs/${id}`);
-      if (res.ok) setDetail(await res.json());
-    } finally {
-      setLoadingDetail(false);
-    }
+    const res = await fetch(`/api/logs/${id}`);
+    if (res.ok) setDetail(await res.json());
   }, []);
 
   const fetchTrendData = useCallback(async (id: number) => {
