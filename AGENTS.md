@@ -39,7 +39,6 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 | Trap                            | Truth                                                                                               |
 | ------------------------------- | --------------------------------------------------------------------------------------------------- |
 | @/ maps to src/                 | ❌ @/\* maps to project root — use @/src/db/client, NOT @/db/client                                 |
-| One cn() utility                | ❌ Two exist: @/lib/utils (shadcn/clsx+twMerge) for UI, @/src/lib/utils (string join) for ingesters |
 | TW config in tailwind.config.ts | ❌ TW v4 uses app/globals.css @theme — the .ts file is vestigial                                    |
 | PostCSS uses tailwindcss        | ❌ Uses @tailwindcss/postcss only                                                                   |
 | data/dashboard.db is committed  | ❌ Gitignored — legacy SQLite file, no longer used. Now using remote Supabase PostgreSQL             |
@@ -56,7 +55,7 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 | Add/change a DB column or table | src/db/schema.ts (then update docs/supabase-schema.sql) |
 | Add an RSS feed source          | src/ingesters/rss/feeds.ts (then add category to app/feed/page.tsx CATEGORIES) |
 | Add a new ingester              | src/ingesters/<name>/index.ts                  |
-| Add a dashboard widget          | components/engineering-intelligence/<Name>.tsx (legacy) or components/briefing/<Name>.tsx (new) |
+| Add a dashboard widget          | components/briefing/<Name>.tsx                 |
 | Add a UI primitive              | components/ui/<Name>.tsx                       |
 | Add an intern task              | src/config/intern-tasks.ts                     |
 | Modify an analytics query       | src/lib/analytics.ts                           |
@@ -67,7 +66,6 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 | Find the documentation index    | docs/README.md                                 |
 | Add/change a repo radar entry   | app/repo-radar/page.tsx (UI), app/api/repo-radar/ (API), src/lib/repo-radar.ts (GitHub logic) |
 | Modify repo radar GitHub client | src/lib/repo-radar.ts                          |
-| Add repo radar seed data        | src/config/repo-radar-seed.ts                  |
 | Modify sidebar nav items        | components/sidebar/sidebar.tsx (NAV_ITEMS constant) |
 | Add a stats API endpoint        | app/api/stats/route.ts                        |
 | Modify theme colors / fonts     | app/globals.css @theme block                  |
@@ -113,7 +111,7 @@ Secrets required: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GH_ACCESS_TOKEN`
 
 ## Coding Rules
 
-- **Imports**: @/\* maps to root. DB → @/src/db/client. UI cn() → @/lib/utils. Ingester cn() → @/src/lib/utils.
+- **Imports**: @/\* maps to root. DB → @/src/db/client. UI cn() → @/lib/utils.
 - **Components**: Server-first. 'use client' only for Radix primitives, event handlers, state, ThemeProvider.
 - **CSS**: Tailwind v4 only. No CSS/SCSS modules. Custom tokens in globals.css @theme block.
 - **Files**: page.tsx / route.ts / layout.tsx for Next.js conventions. PascalCase for component file names.

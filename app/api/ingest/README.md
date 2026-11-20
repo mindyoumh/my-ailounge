@@ -8,7 +8,7 @@ Two route files: trigger ingestion and query status.
 
 Calls `runAll({ closeDb: false })` from `src/ingesters/run-all.ts` and returns JSON results.
 
-Called by the `IngestButton` component (`components/engineering-intelligence/ingest-button.tsx`).
+No in-app caller since the `IngestButton` component was removed; scheduled GitHub Actions run ingestion.
 
 **Response:**
 ```json

@@ -4,18 +4,6 @@ Shared helpers consumed by ingesters and the dashboard UI.
 
 ## Files
 
-### `utils.ts`
-
-CSS classname merger for Tailwind UI components.
-
-```ts
-cn("px-4", isActive && "bg-blue-500", className)
-```
-
-Uses `clsx` for conditional joining and `tailwind-merge` for conflict resolution.
-
----
-
 ### `db.ts`
 
 Shared database write utility used by all ingesters.
@@ -219,14 +207,12 @@ Dashboard analytics queries against **Supabase PostgreSQL** (migrated from SQLit
 
 | Function | Returns | SQL (Supabase pattern) | Was (SQLite) |
 |----------|---------|------------------------|--------------|
-| `getTotalItems()` | `Promise<number>` | `supabase.from("feed_items").select("*", { count: "exact", head: true })` | `COUNT(*) FROM feed_items` |
 | `getItemsToday()` | `Promise<number>` | `.gte("fetched_at", todayISO)` with `.lte(...)` date filter | `WHERE date(fetched_at) = date('now')` |
 | `getItemsThisWeek()` | `Promise<number>` | `.gte("fetched_at", weekAgoISO)` | `WHERE fetched_at >= datetime('now', '-7 days')` |
 | `getItemsBySource()` | `Promise<SourceBreakdown[]>` | `supabase.from("feed_items").select("source, count:source.count()")` | `GROUP BY source ORDER BY count DESC` |
 | `getItemsByCategory()` | `Promise<CategoryBreakdown[]>` | `supabase.from("feed_items").select("category, count:category.count()")` | `GROUP BY category ORDER BY count DESC` |
 | `getIngestionStatus()` | `Promise<IngestionStatus[]>` | Reads all `ingest:*` keys from `kv_store` via `.in()` filter | Same logic, sync SQLite |
 | `getLastGlobalIngestion()` | `Promise<string \| null>` | `.select("value").eq("key", "ingest:last_run:all").single()` | Same logic, sync SQLite |
-| `getGlobalIngestionStatus()` | `Promise<string \| null>` | `.select("value").eq("key", "ingest:status:all").single()` | Same logic, sync SQLite (added in `e331bf9`) |
 
 **IngestionStatus fields:** `source`, `lastRun`, `status`, `count`, `elapsedMs`
 
@@ -234,7 +220,6 @@ Consumed by API routes at `app/api/stats/route.ts` (which return JSON for the si
 
 Used by:
 - `app/api/stats/route.ts` — wraps analytics calls for client consumption
-- `components/engineering-intelligence/` — dashboard widgets
 
 ---
 

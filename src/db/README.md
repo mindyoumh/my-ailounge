@@ -4,23 +4,6 @@
 
 ## Files
 
-### `supabase-client.ts`
-
-Creates and exports a singleton Supabase client using `@supabase/supabase-js`. Client initialized once from environment variables.
-
-```ts
-import { supabase } from "@/src/db/supabase-client";
-
-const { data, error } = await supabase
-  .from("feed_items")
-  .select("*")
-  .limit(10);
-```
-
-Requires `.env.local` with:
-- `NEXT_PUBLIC_SUPABASE_URL` — your Supabase project URL
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` — your Supabase anon/public key
-
 ### `browser-client.ts`
 
 Creates a Supabase client for browser (client-side) usage using `@supabase/ssr` `createBrowserClient`. Used by login, signup, and the AuthProvider:
@@ -49,7 +32,7 @@ Requires `.env.local` with:
 - `NEXT_PUBLIC_SUPABASE_URL` — your Supabase project URL
 - `SUPABASE_SERVICE_ROLE_KEY` — your Supabase service role key (Settings → API → service_role key)
 
-This is the **primary DB client** for route handlers, ingesters, and library code. The anon-key `supabase-client.ts` is legacy and only kept for backward compatibility.
+This is the **primary DB client** for route handlers, ingesters, and library code.
 
 ### `server-client.ts`
 
@@ -78,7 +61,7 @@ const { data: { user } } = await supabase.auth.getUser();
 
 ### `client.ts`
 
-Convenience re-export. Now re-exports `serviceClient` from `service-client.ts` (was `supabase` from `supabase-client.ts`). Kept as the same import path so consuming code didn't need import changes:
+Convenience re-export. Now re-exports `serviceClient` from `service-client.ts`. Kept as the same import path so consuming code didn't need import changes:
 
 ```ts
 import { serviceClient, getDb } from "@/src/db/client";

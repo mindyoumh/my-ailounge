@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
-import { getIngestionStatus, getGlobalIngestionStatus } from "@/src/lib/analytics";
-import { serviceClient } from "@/src/db/service-client";
+import { getIngestionStatus } from "@/src/lib/analytics";
 import { Activity, Radio, TrendingUp, Rss, Radar } from "lucide-react";
 
 const SOURCE_CONFIG: Record<string, { icon: React.ElementType; color: string }> = {
